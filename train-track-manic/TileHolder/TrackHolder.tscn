@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d5ryhf3lp2yi"]
+
+[node name="Node2D" type="Node2D" unique_id=91845701]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=631933671]
+offset_right = 527.0
+offset_bottom = 434.0
+color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1944576632]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
