@@ -5,7 +5,7 @@ func _ready() -> void:
 	var tile_scene = load("res://TileHolder/TrackTile/Tile.tscn")
 	var grid = $ColorRect/GridContainer
 	
-	for i in range(14):
+	for i in range(15):
 		var tile_instance = tile_scene.instantiate()
 		tile_instance.set_tile(i)
 		

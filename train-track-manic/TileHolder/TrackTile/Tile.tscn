@@ -121,7 +121,7 @@ script = ExtResource("1_bjtlh")
 
 [node name="TrackTypes" type="AnimatedSprite2D" parent="." unique_id=1622758388]
 unique_name_in_owner = true
-position = Vector2(63, 63)
 sprite_frames = SubResource("SpriteFrames_5gaxt")
+centered = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TrackTypes" unique_id=242064565]
