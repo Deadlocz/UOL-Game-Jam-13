@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d5ryhf3lp2yi"]
 
 [ext_resource type="Script" uid="uid://b88uww1icsg" path="res://TileHolder/track_holder.gd" id="1_ul165"]
+[ext_resource type="PackedScene" uid="uid://be8pe5h25j3k6" path="res://TileHolder/SelectTile/Tile.tscn" id="2_svviu"]
 
 [node name="Holder" type="Node2D" unique_id=91845701]
 script = ExtResource("1_ul165")
@@ -29,6 +30,8 @@ columns = 4
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 mouse_filter = 2
+
+[node name="SelectTile" parent="ColorRect/GridContainer/ColorRect3" unique_id=2123734643 instance=ExtResource("2_svviu")]
 
 [node name="ColorRect4" type="ColorRect" parent="ColorRect/GridContainer" unique_id=598118667]
 custom_minimum_size = Vector2(32, 32)

@@ -1,120 +1,7 @@
 [gd_scene format=3 uid="uid://toyrxvks063b"]
 
 [ext_resource type="Script" uid="uid://daycfty4tqabu" path="res://TileHolder/TrackTile/TileAction.gd" id="1_bjtlh"]
-[ext_resource type="Texture2D" uid="uid://bhxberm4ooxwl" path="res://Level/Tileset.png" id="2_3da05"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3da05"]
-atlas = ExtResource("2_3da05")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2xkra"]
-atlas = ExtResource("2_3da05")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d4q3u"]
-atlas = ExtResource("2_3da05")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n06ca"]
-atlas = ExtResource("2_3da05")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kj0oi"]
-atlas = ExtResource("2_3da05")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5betp"]
-atlas = ExtResource("2_3da05")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_otg8y"]
-atlas = ExtResource("2_3da05")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5gaxt"]
-atlas = ExtResource("2_3da05")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5kvje"]
-atlas = ExtResource("2_3da05")
-region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbnwi"]
-atlas = ExtResource("2_3da05")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b3w30"]
-atlas = ExtResource("2_3da05")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1dy8"]
-atlas = ExtResource("2_3da05")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fbv18"]
-atlas = ExtResource("2_3da05")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5leo6"]
-atlas = ExtResource("2_3da05")
-region = Rect2(64, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qx8ff"]
-atlas = ExtResource("2_3da05")
-region = Rect2(96, 96, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5gaxt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3da05")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2xkra")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d4q3u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n06ca")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kj0oi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5betp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_otg8y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5gaxt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5kvje")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbnwi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b3w30")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h1dy8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fbv18")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5leo6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qx8ff")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="TileSet" uid="uid://b4a2cqdy5q21w" path="res://Level/rails.tres" id="2_2xkra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3da05"]
 size = Vector2(32, 32)
@@ -122,18 +9,13 @@ size = Vector2(32, 32)
 [node name="TrackTile" type="Sprite2D" unique_id=391364208]
 script = ExtResource("1_bjtlh")
 
-[node name="TrackTypes" type="AnimatedSprite2D" parent="." unique_id=1622758388]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=242064565]
 unique_name_in_owner = true
-sprite_frames = SubResource("SpriteFrames_5gaxt")
-frame = 12
-frame_progress = 0.7281339
-centered = false
+tile_set = ExtResource("2_2xkra")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="TrackTypes" unique_id=242064565]
+[node name="Area2D" type="Area2D" parent="." unique_id=31060796]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1014110431]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=745536085]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=91417845]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_3da05")
 

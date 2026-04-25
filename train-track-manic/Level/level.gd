@@ -5,7 +5,7 @@ extends Node2D
 const OBJECT = preload("res://TileHolder/TrackTile/Tile.tscn")
 
 var gridSize: Vector2
-var object
+var object: TrackTile
 var targetCell
 var objectCells: Array[GridCell]
 var isValid = false
@@ -13,6 +13,7 @@ var isValid = false
 func _ready() -> void:
 	gridSize = Vector2(grid.cellWidth, grid.cellHeight)
 	Event.create_new_tile.connect(create_new)
+	Event.move_tile.connect(create_new)
 
 func _input(event):
 	# showcase only
@@ -20,12 +21,12 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and isValid:
 			_place_placement()
 
+
 func create_new(object1):
-	if _get_target_cell(get_global_mouse_position()) == null:
-		var newPlacement = object1
-		add_child(newPlacement)
-		newPlacement.global_position = get_global_mouse_position()
-		object = newPlacement
+	var newPlacement = object1
+	add_child(newPlacement)
+	newPlacement.global_position = get_global_mouse_position()
+	object = newPlacement
 
 func _on_grid_gui_input(event):
 	if event is InputEventMouseMotion:
@@ -81,7 +82,7 @@ func _check_and_hightlight_cells():
 func _place_placement():
 	object.set_on_place()
 	object = null
-	isValid = null
+	isValid = false
 	
 	for cell in objectCells:
 		cell.full = true
