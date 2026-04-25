@@ -5,12 +5,12 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	sound_main()
+	sound_melody()
 
 func sound_main():
-	sound0.play()
+	sound0.play(sound1.get_playback_position())
 	sound1.stop()
 
 func sound_melody():
+	sound1.play(sound0.get_playback_position())
 	sound0.stop()
-	sound1.play()

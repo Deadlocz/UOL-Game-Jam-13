@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqyw25kmcyv7n"]
 
 [ext_resource type="Texture2D" uid="uid://cg0y7bm6ufekl" path="res://Menu/button.png" id="1_dtkyu"]
+[ext_resource type="Script" uid="uid://cc50ys5ndw5mk" path="res://Menu/main_menu.gd" id="1_fw3rq"]
 [ext_resource type="Script" uid="uid://b8nceajgj7vni" path="res://Menu/background_placeholder.gd" id="1_ohgnh"]
 [ext_resource type="Texture2D" uid="uid://cerky1e3l4la0" path="res://Menu/button_pressed.png" id="2_ohgnh"]
 [ext_resource type="Texture2D" uid="uid://8faj6yesnrtk" path="res://Menu/button_hover.png" id="3_fw3rq"]
@@ -34,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fw3rq")
 
 [node name="BackgroundPlaceholder" type="TextureRect" parent="." unique_id=978637143]
 layout_mode = 1
@@ -100,3 +102,5 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Settings"
+
+[connection signal="pressed" from="ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]

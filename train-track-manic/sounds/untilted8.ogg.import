@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/untilted8.ogg-2628829eaefb38fc7a6582722ee4a7c
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

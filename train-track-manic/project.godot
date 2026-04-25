@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TrainTrackManic"
-run/main_scene="uid://k0o5jkpt3rxt"
+run/main_scene="uid://cqyw25kmcyv7n"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

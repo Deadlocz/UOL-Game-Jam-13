@@ -14,6 +14,7 @@ func _ready() -> void:
 	Event.create_new_tile.connect(create_new)
 	Event.move_tile.connect(create_new)
 	fill_start_cells()
+	Bgm.sound_main()
 
 func fill_start_cells():
 	var cells = grid.get_children()
