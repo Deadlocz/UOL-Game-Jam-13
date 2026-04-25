@@ -1,51 +1,127 @@
-[gd_scene format=4 uid="uid://toyrxvks063b"]
+[gd_scene format=3 uid="uid://toyrxvks063b"]
 
-[ext_resource type="TileSet" uid="uid://b4a2cqdy5q21w" path="res://Level/rails.tres" id="1_2xkra"]
-[ext_resource type="Script" uid="uid://bj71reg85o4d7" path="res://Train/train.gd" id="2_d4q3u"]
-[ext_resource type="Texture2D" uid="uid://w5suyrsrspyo" path="res://icon.svg" id="3_n06ca"]
+[ext_resource type="Script" uid="uid://daycfty4tqabu" path="res://TileHolder/TrackTile/TileAction.gd" id="1_bjtlh"]
+[ext_resource type="Texture2D" uid="uid://bhxberm4ooxwl" path="res://Level/Tileset.png" id="2_3da05"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6mkr"]
-size = Vector2(10, 10)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3da05"]
+atlas = ExtResource("2_3da05")
+region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmtf6"]
-size = Vector2(32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xkra"]
+atlas = ExtResource("2_3da05")
+region = Rect2(0, 32, 32, 32)
 
-[node name="Level" type="Node2D" unique_id=1004307011]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4q3u"]
+atlas = ExtResource("2_3da05")
+region = Rect2(0, 0, 32, 32)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1587177521]
-tile_map_data = PackedByteArray("AAAEAAIAAAAAAAAAAAAEAAMAAAABAAEAAAAEAAQAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAABAAIAAAAFAAcAAAACAAMAAAAGAAcAAAACAAMAAAAHAAcAAAACAAMAAAAIAAcAAAACAAMAAAAJAAcAAAACAAAAAAAKAAcAAAACAAMAAAALAAcAAAACAAIAAAAMAAcAAAACAAMAAAANAAcAAAADAAAAAAANAAgAAAABAAIAAAAOAAgAAAADAAAAAAAOAAkAAAAAAAEAAAAOAAoAAAABAAIAAAAPAAoAAAACAAMAAAAQAAoAAAACAAIAAAARAAoAAAADAAAAAAARAAsAAAABAAIAAAASAAsAAAACAAMAAAATAAsAAAACAAMAAAAUAAsAAAADAAAAAAAUAAwAAAABAAIAAAAVAAwAAAACAAMAAAAWAA0AAAAAAAIAAAAWAAwAAAACAAAAAAAXAAwAAAACAAMAAAAYAAsAAAAAAAEAAAAYAAoAAAAAAAEAAAAYAAkAAAACAAEAAAAYAAgAAAAAAAAAAAAYAAwAAAADAAIAAAAJAAgAAAAAAAEAAAAJAAkAAAAAAAEAAAAJAAoAAAAAAAEAAAAJAAsAAAAAAAEAAAAJAAwAAAAAAAEAAAAJAA0AAAAAAAEAAAAJAA4AAAABAAIAAAAKAA4AAAACAAMAAAALAA4AAAADAAAAAAALAA8AAAABAAIAAAAMAA8AAAACAAMAAAANAA8AAAADAAAAAAANABAAAAABAAIAAAAOABAAAAACAAMAAAALAAYAAAAAAAEAAAALAAUAAAAAAAEAAAALAAQAAAABAAAAAAAMAAQAAAACAAMAAAANAAQAAAACAAMAAAAOAAQAAAACAAMAAAAPAAQAAAACAAMAAAAQAAQAAAACAAAAAAARAAQAAAACAAMAAAASAAQAAAACAAMAAAATAAQAAAACAAAAAAAUAAQAAAADAAMAAAATAAUAAAAAAAEAAAATAAYAAAAAAAEAAAATAAcAAAAAAAEAAAATAAgAAAABAAIAAAAUAAgAAAACAAMAAAAVAAgAAAACAAMAAAAWAAgAAAADAAAAAAAWAAkAAAABAAIAAAAXAAkAAAACAAMAAAAQAAUAAAAAAAEAAAAQAAYAAAAAAAEAAAAQAAcAAAAAAAEAAAAQAAgAAAAAAAEAAAAQAAkAAAAAAAEAAAAFAAMAAAACAAMAAAAGAAMAAAACAAMAAAAHAAMAAAACAAMAAAAIAAMAAAACAAMAAAAJAAMAAAADAAIAAAAJAAIAAAAAAAEAAAAJAAEAAAABAAAAAAAKAAEAAAACAAMAAAALAAEAAAACAAMAAAAMAAEAAAACAAMAAAANAAEAAAACAAAAAAANAAIAAAABAAIAAAAOAAIAAAADAAIAAAAOAAEAAAACAAAAAAAPAAEAAAACAAMAAAAQAAEAAAACAAMAAAARAAEAAAACAAMAAAASAAEAAAACAAMAAAATAAEAAAACAAMAAAAUAAEAAAACAAMAAAAVAAEAAAACAAMAAAAWAAEAAAACAAMAAAAXAAEAAAACAAMAAAAYAAEAAAADAAAAAAAYAAIAAAAAAAEAAAAYAAMAAAADAAIAAAAXAAMAAAABAAAAAAAXAAQAAAAAAAEAAAAXAAUAAAABAAEAAAAXAAYAAAAAAAIAAAAYAAUAAAACAAMAAAAZAAUAAAACAAMAAAAaAAUAAAACAAMAAAAbAAUAAAADAAAAAAAbAAYAAAAAAAEAAAAbAAcAAAAAAAEAAAAbAAgAAAAAAAEAAAAbAAkAAAADAAIAAAAaAAkAAAACAAMAAAAZAAkAAAACAAMAAAAPABAAAAACAAMAAAAQABAAAAACAAMAAAARABAAAAACAAMAAAASABAAAAACAAMAAAATABAAAAACAAMAAAAUABAAAAACAAMAAAAVABAAAAADAAIAAAAVAA8AAAABAAAAAAAWAA8AAAADAAMAAAA=")
-tile_set = ExtResource("1_2xkra")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n06ca"]
+atlas = ExtResource("2_3da05")
+region = Rect2(32, 64, 32, 32)
 
-[node name="ActorLayer" type="TileMapLayer" parent="." unique_id=488489606]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj0oi"]
+atlas = ExtResource("2_3da05")
+region = Rect2(32, 32, 32, 32)
 
-[node name="Train" type="CharacterBody2D" parent="ActorLayer" unique_id=718460909]
-position = Vector2(144, 85)
-collision_mask = 3
-script = ExtResource("2_d4q3u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5betp"]
+atlas = ExtResource("2_3da05")
+region = Rect2(32, 0, 32, 32)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="ActorLayer/Train" unique_id=836585356]
-path_desired_distance = 5.0
-target_desired_distance = 5.0
-path_max_distance = 40000.0
-path_postprocessing = 1
-debug_enabled = true
-debug_use_custom = true
-debug_path_custom_color = Color(0.7619845, 0.50440294, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_otg8y"]
+atlas = ExtResource("2_3da05")
+region = Rect2(64, 32, 32, 32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ActorLayer/Train" unique_id=1539054254]
-position = Vector2(-0.41999817, 0)
-shape = SubResource("RectangleShape2D_o6mkr")
-debug_color = Color(1, 0.53333336, 0.8039216, 0.84313726)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gaxt"]
+atlas = ExtResource("2_3da05")
+region = Rect2(64, 64, 32, 32)
 
-[node name="Sprite2D" type="Sprite2D" parent="ActorLayer/Train/CollisionShape2D" unique_id=47814388]
-position = Vector2(0.41999817, 0)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("3_n06ca")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kvje"]
+atlas = ExtResource("2_3da05")
+region = Rect2(96, 64, 32, 32)
 
-[node name="Station" type="CharacterBody2D" parent="ActorLayer" unique_id=323370398]
-position = Vector2(784, 279)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbnwi"]
+atlas = ExtResource("2_3da05")
+region = Rect2(96, 32, 32, 32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ActorLayer/Station" unique_id=354451980]
-position = Vector2(784, 269)
-shape = SubResource("RectangleShape2D_qmtf6")
-debug_color = Color(0.49168664, 0.0028762936, 0.8355438, 0.7529412)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3w30"]
+atlas = ExtResource("2_3da05")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1dy8"]
+atlas = ExtResource("2_3da05")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbv18"]
+atlas = ExtResource("2_3da05")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5leo6"]
+atlas = ExtResource("2_3da05")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx8ff"]
+atlas = ExtResource("2_3da05")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gaxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3da05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xkra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4q3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n06ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj0oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5betp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otg8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gaxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kvje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbnwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3w30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1dy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbv18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5leo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx8ff")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TrackTile" type="Sprite2D" unique_id=391364208]
+script = ExtResource("1_bjtlh")
+
+[node name="TrackTypes" type="AnimatedSprite2D" parent="." unique_id=1622758388]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_5gaxt")
+centered = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TrackTypes" unique_id=242064565]

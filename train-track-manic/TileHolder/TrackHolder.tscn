@@ -8,8 +8,8 @@ tile_path = "uid://toyrxvks063b"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=631933671]
 self_modulate = Color(0.06469653, 0.06469653, 0.06469653, 1)
-offset_right = 175.0
-offset_bottom = 158.0
+offset_right = 133.0
+offset_bottom = 133.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
 [node name="GridContainer" type="GridContainer" parent="ColorRect" unique_id=1232008429]
