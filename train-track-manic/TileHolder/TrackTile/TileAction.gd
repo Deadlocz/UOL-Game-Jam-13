@@ -36,7 +36,7 @@ func get_global_rect():
 func set_on_place():
 	modulate.a = 1
 
-func _on_action_pressed() -> void:
-	print("hi")
-	#TODO add selection mode or use smt. else
-	return
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("click"):
+		print("clicked")
