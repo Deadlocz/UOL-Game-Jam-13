@@ -12,17 +12,19 @@ var isValid = false
 
 func _ready() -> void:
 	gridSize = Vector2(grid.cellWidth, grid.cellHeight)
+	Event.create_new_tile.connect(create_new)
 	
 func _input(event):
 	# showcase only
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and not object:
-			var newPlacement = OBJECT.instantiate()
-			add_child(newPlacement)
-			newPlacement.global_position = get_global_mouse_position()
-			object = newPlacement
-		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and isValid:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and isValid:
 			_place_placement(objectCell)
+
+func create_new(object1):
+	var newPlacement = object1.instantiate()
+	add_child(newPlacement)
+	newPlacement.global_position = get_global_mouse_position()
+	object = newPlacement
 
 func _on_grid_gui_input(event):
 	if event is InputEventMouseMotion:

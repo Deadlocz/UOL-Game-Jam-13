@@ -116,12 +116,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3da05"]
+size = Vector2(32, 32)
+
 [node name="TrackTile" type="Sprite2D" unique_id=391364208]
 script = ExtResource("1_bjtlh")
 
 [node name="TrackTypes" type="AnimatedSprite2D" parent="." unique_id=1622758388]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_5gaxt")
+frame = 12
+frame_progress = 0.7281339
 centered = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TrackTypes" unique_id=242064565]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1014110431]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=745536085]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_3da05")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

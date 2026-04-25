@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://grid_map/Grid.tscn" id="2_d6qko"]
 [ext_resource type="TileSet" uid="uid://chqweth4bxyll" path="res://Level/ground.tres" id="3_22cqp"]
 [ext_resource type="TileSet" uid="uid://da6we7qbqf3cf" path="res://Level/accessoire.tres" id="4_wqlfs"]
+[ext_resource type="PackedScene" uid="uid://d5ryhf3lp2yi" path="res://TileHolder/TrackHolder.tscn" id="6_nk1il"]
 
 [node name="Level" type="Node2D" unique_id=1004307011]
 script = ExtResource("1_nk1il")
@@ -32,8 +33,13 @@ grow_horizontal = 1
 grow_vertical = 1
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 5
+columns = 6
+width = 6
 cellWidth = 96
 cellHeight = 96
+
+[node name="Holder" parent="." unique_id=91845701 instance=ExtResource("6_nk1il")]
+position = Vector2(748, 7)
+scale = Vector2(2, 2)
 
 [connection signal="gui_input" from="Grid" to="." method="_on_grid_gui_input"]

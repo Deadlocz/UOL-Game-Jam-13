@@ -11,14 +11,19 @@ config_version=5
 [application]
 
 config/name="TrainTrackManic"
-run/main_scene="uid://toyrxvks063b"
+run/main_scene="uid://k0o5jkpt3rxt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Event="*uid://0u4jjeotrnq4"
 
 [display]
 
 window/size/viewport_width=1024
 window/size/viewport_height=576
+window/stretch/mode="viewport"
 
 [input]
 

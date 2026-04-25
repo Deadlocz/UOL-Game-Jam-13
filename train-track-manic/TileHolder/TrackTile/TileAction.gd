@@ -2,6 +2,7 @@ extends Sprite2D
 
 var tile_type:int
 @export var rect: Rect2
+@export var level: Node2D
 
 # constructor for setting the tile type
 # func _init(type:int) -> void:
@@ -37,6 +38,7 @@ func set_on_place():
 	modulate.a = 1
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("click"):
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
 		print("clicked")
+		Event.create_new_tile.emit(preload("res://TileHolder/TrackTile/Tile.tscn"))
