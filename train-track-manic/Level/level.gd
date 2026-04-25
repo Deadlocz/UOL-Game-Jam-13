@@ -7,17 +7,12 @@ const OBJECT = preload("res://TileHolder/TrackTile/Tile.tscn")
 var gridSize: Vector2
 var object
 var targetCell
-<<<<<<< Updated upstream
 var objectCell
-=======
-var objectCells
->>>>>>> Stashed changes
 var isValid = false
 
 func _ready() -> void:
 	gridSize = Vector2(grid.cellWidth, grid.cellHeight)
 	
-<<<<<<< Updated upstream
 func _input(event):
 	# showcase only
 	if event is InputEventMouseButton:
@@ -43,31 +38,6 @@ func _on_grid_gui_input(event):
 			_reset_highlight()
 			objectCell = _get_object_cells()
 			isValid = _check_and_hightlight_cells(objectCell)
-=======
-func _input(event: InputEvent) -> void:
-	# showcase only
-	if Input.is_action_just_pressed("leftClick") and not object:
-		var newPlacement = OBJECT.instantiate()
-		add_child(newPlacement)
-		newPlacement.global_position = get_global_mouse_position()
-		object = newPlacement
-	elif Input.is_action_just_pressed("leftClick") and isValid:
-		_place_placement(objectCells)
-
-func _on_grid_gui_input(event: InputEvent) -> void:
-	if not object: return
-	
-	var mousePosition = get_global_mouse_position()
-	var newTargetCell = _get_target_cell(mousePosition)
-	
-	if newTargetCell and newTargetCell != targetCell:
-		targetCell = newTargetCell
-		object.global_position = targetCell.global_position + object.rect.size/2
-		
-		_reset_highlight()
-		objectCells = _get_object_cells()
-		isValid = _check_and_hightlight_cells(objectCells)
->>>>>>> Stashed changes
 
 func _get_target_cell(targetPosition):
 	for child:Control in grid.get_children():
@@ -88,11 +58,8 @@ func _get_object_cells() -> Array:
 	return cells
 
 func _check_and_hightlight_cells(objectCells: Array):
-<<<<<<< Updated upstream
 	isValid = true
-=======
 	var isValid = true
->>>>>>> Stashed changes
 	var objectCellCount = (object.rect.size.x / gridSize.x) * (object.rect.size.y / gridSize.y)
 	
 	if objectCellCount != objectCells.size(): 
