@@ -23,6 +23,12 @@ func set_logic(type: int):
 		1:
 			pass
 
+<<<<<<< Updated upstream
+=======
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+>>>>>>> Stashed changes
 	
 func get_global_rect():
 	return Rect2(
@@ -32,6 +38,10 @@ func get_global_rect():
 	
 func set_on_place():
 	modulate.a = 1
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 func _on_action_pressed() -> void:
 	print("hi")
