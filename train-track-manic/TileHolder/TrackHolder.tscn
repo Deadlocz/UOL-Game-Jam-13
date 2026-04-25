@@ -13,14 +13,13 @@ color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
 [node name="Tile1" type="Container" parent="ColorRect" unique_id=1516909391]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 132.0
-offset_right = 186.0
-offset_bottom = 225.0
+offset_top = 1.0
+offset_right = 111.0
+offset_bottom = 94.0
 
 [node name="Tile2" type="Container" parent="ColorRect" unique_id=1884460367]
 layout_mode = 0
-offset_left = 327.0
-offset_top = 152.0
-offset_right = 438.0
-offset_bottom = 245.0
+offset_left = 385.0
+offset_top = 3.0
+offset_right = 496.0
+offset_bottom = 96.0

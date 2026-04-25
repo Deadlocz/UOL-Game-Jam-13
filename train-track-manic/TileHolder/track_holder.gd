@@ -6,6 +6,10 @@ func _ready() -> void:
 	var tile_scene = load("res://TileHolder/TrackTile/Tile.tscn")
 	var tile_instance = tile_scene.instantiate()
 	var tile_instance2 = tile_scene.instantiate()
+	
+	#TODO set here the different tile types
+	
+	tile_instance.set_tile(1)
 	$ColorRect/Tile1.add_child(tile_instance)
 	$ColorRect/Tile2.add_child(tile_instance2)
 	

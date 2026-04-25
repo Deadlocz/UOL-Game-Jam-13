@@ -7,14 +7,13 @@ func _init() -> void:
 	pass
 	
 func _ready() -> void:
-	_set_logic(1)
-	_set_tile(1)
+	pass
 
-func _set_tile(type: int) -> void:
+func set_tile(type: int) -> void:
 	%TrackTypes.frame = type;
-	_set_logic(type)
+	set_logic(type)
 
-func _set_logic(type: int):
+func set_logic(type: int):
 	#TODO add logic depending on what is needed
 	match(type):
 		0:
