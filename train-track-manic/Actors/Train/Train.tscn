@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bit1ui22aykpx"]
+
+[ext_resource type="Script" uid="uid://bj71reg85o4d7" path="res://Actors/Train/train.gd" id="1_q62qj"]
+[ext_resource type="Texture2D" uid="uid://cevxnvakewmme" path="res://Level/test.png" id="2_6dyiy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q62qj"]
+
+[node name="Train" type="CharacterBody2D" unique_id=1029754237]
+script = ExtResource("1_q62qj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=418362020]
+shape = SubResource("RectangleShape2D_q62qj")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=190236208]
+texture = ExtResource("2_6dyiy")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2014716535]

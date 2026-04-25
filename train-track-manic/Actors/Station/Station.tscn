@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://e0bhy6f25e6y"]
+
+[ext_resource type="Texture2D" uid="uid://cevxnvakewmme" path="res://Level/test.png" id="1_v4yli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7yr1"]
+
+[node name="Station" type="CharacterBody2D" unique_id=436988140]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1785667169]
+shape = SubResource("RectangleShape2D_i7yr1")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=7544768]
+modulate = Color(1.3957917e-06, 0.41966248, 0.31213915, 1)
+texture = ExtResource("1_v4yli")

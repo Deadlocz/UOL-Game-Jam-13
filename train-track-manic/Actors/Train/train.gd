@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 500.0
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
-@onready var station: CharacterBody2D = $"../Station"
+@export var target: Node2D
 
 # set le movement target
 func set_movement_target(movement_target: Vector2):
@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 # move towards la station
 func _move_towards_station() -> void:
 	# update the station position
-	set_movement_target(station.position)
+	set_movement_target(target.position)
 	
 	# if we're at the target, stop
 	if nav.is_navigation_finished():

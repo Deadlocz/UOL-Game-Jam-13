@@ -1,0 +1,39 @@
+[gd_scene format=4 uid="uid://cy1seo7nqbef7"]
+
+[ext_resource type="Script" uid="uid://bbgfp76omngdl" path="res://Level/schmevel.gd" id="1_hcjw8"]
+[ext_resource type="TileSet" path="res://Level/ground.tres" id="2_m0bew"]
+[ext_resource type="TileSet" path="res://Level/accessoire.tres" id="3_kx012"]
+[ext_resource type="TileSet" uid="uid://b4a2cqdy5q21w" path="res://Level/rails.tres" id="4_g0nup"]
+[ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://grid_map/Grid.tscn" id="5_42xew"]
+
+[node name="Level" type="Node2D" unique_id=1004307011]
+script = ExtResource("1_hcjw8")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1720023518]
+tile_map_data = PackedByteArray("AAAFAAIAAQAAAAAAAAAFAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAYAAQAAAAAAAAADAAcAAQAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAANAAYAAQAAAAAAAAAKAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAQAAAAAAAAANAAgAAQAAAAAAAAANAAcAAQAAAAAAAAA=")
+tile_set = ExtResource("2_m0bew")
+
+[node name="Accessoire" type="TileMapLayer" parent="." unique_id=542044567]
+tile_set = ExtResource("3_kx012")
+
+[node name="Rails" type="TileMapLayer" parent="." unique_id=1587177521]
+tile_map_data = PackedByteArray("AAAEAAIAAAAAAAAAAAAEAAMAAAAAAAEAAAAEAAQAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAABAAIAAAAFAAcAAAACAAMAAAAGAAcAAAACAAMAAAAHAAcAAAACAAMAAAAIAAcAAAACAAMAAAAJAAcAAAACAAMAAAAKAAcAAAACAAMAAAALAAcAAAACAAMAAAAMAAcAAAACAAMAAAA=")
+tile_set = ExtResource("4_g0nup")
+
+[node name="Grid" parent="." unique_id=798381590 instance=ExtResource("5_42xew")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 96.0
+offset_top = 32.0
+offset_right = 576.0
+offset_bottom = 512.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+cellWidth = 96
+cellHeight = 96
+
+[connection signal="gui_input" from="Grid" to="." method="_on_grid_gui_input"]
