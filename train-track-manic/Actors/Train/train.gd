@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 50.0
+var running = false
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 
@@ -11,7 +12,8 @@ func set_movement_target(movement_target: Vector2):
 	nav.target_position = movement_target
 
 func _physics_process(delta: float) -> void:
-	_move_towards_station() # move towards le station
+	if running:
+		_move_towards_station() # move towards le station
 
 # move towards la station
 func _move_towards_station() -> void:
@@ -45,3 +47,6 @@ func _move_towards_station() -> void:
 
 func _velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
+	
+func _on_train_button_pressed() -> void:
+	running = !running

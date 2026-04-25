@@ -39,7 +39,7 @@ cellWidth = 96
 cellHeight = 96
 
 [node name="Station" parent="." unique_id=436988140 instance=ExtResource("6_kx012")]
-position = Vector2(336, 115)
+position = Vector2(336, 129)
 
 [node name="Train" parent="." unique_id=1029754237 node_paths=PackedStringArray("target") instance=ExtResource("7_g0nup")]
 position = Vector2(144, 83)

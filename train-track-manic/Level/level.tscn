@@ -6,6 +6,9 @@
 [ext_resource type="TileSet" path="res://Level/ground.tres" id="3_22cqp"]
 [ext_resource type="TileSet" uid="uid://dwjjjcil6r31r" path="res://Level/accessoire.tres" id="4_wqlfs"]
 [ext_resource type="PackedScene" uid="uid://d5ryhf3lp2yi" path="res://TileHolder/TrackHolder.tscn" id="6_nk1il"]
+[ext_resource type="PackedScene" uid="uid://bit1ui22aykpx" path="res://Actors/Train/Train.tscn" id="7_22cqp"]
+[ext_resource type="PackedScene" uid="uid://e0bhy6f25e6y" path="res://Actors/Station/Station.tscn" id="8_wqlfs"]
+[ext_resource type="PackedScene" uid="uid://d4fxy1jx46wg0" path="res://Actors/Train/Button/TrainButton.tscn" id="9_wqlfs"]
 
 [node name="Level" type="Node2D" unique_id=1004307011]
 script = ExtResource("1_nk1il")
@@ -43,4 +46,21 @@ cellHeight = 32
 position = Vector2(748, 7)
 scale = Vector2(2, 2)
 
+[node name="Train" parent="." unique_id=1029754237 node_paths=PackedStringArray("target") instance=ExtResource("7_22cqp")]
+position = Vector2(145, 48)
+target = NodePath("../Station2")
+
+[node name="Station" parent="." unique_id=436988140 instance=ExtResource("8_wqlfs")]
+position = Vector2(431, 240)
+
+[node name="Station2" parent="." unique_id=686558500 instance=ExtResource("8_wqlfs")]
+position = Vector2(304, 207)
+
+[node name="TrainButton" parent="." unique_id=1538748435 instance=ExtResource("9_wqlfs")]
+offset_left = 418.0
+offset_top = 34.0
+offset_right = 482.0
+offset_bottom = 66.0
+
 [connection signal="gui_input" from="Grid" to="." method="_on_grid_gui_input"]
+[connection signal="pressed" from="TrainButton" to="Train" method="_on_train_button_pressed"]
