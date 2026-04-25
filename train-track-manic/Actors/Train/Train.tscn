@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bit1ui22aykpx"]
 
 [ext_resource type="Script" uid="uid://bj71reg85o4d7" path="res://Actors/Train/train.gd" id="1_q62qj"]
-[ext_resource type="Texture2D" uid="uid://bbeymnwbai1uo" path="res://Actors/Train/V100.png" id="2_q62qj"]
+[ext_resource type="Texture2D" uid="uid://br48ruw5jxlx5" path="res://Actors/Train/V100_side.png" id="2_q62qj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q62qj"]
 
