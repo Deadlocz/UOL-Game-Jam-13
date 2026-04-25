@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbeymnwbai1uo"
-path="res://.godot/imported/V100.png-c6c743d6f8d1dd879be1e525aea8e4c0.ctex"
+uid="uid://cuhaq5qcdb50o"
+path="res://.godot/imported/SchweizerKorkodil_side.png-c88729a72f86e4ca631772bc8ae6dde9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Train/V100.png"
-dest_files=["res://.godot/imported/V100.png-c6c743d6f8d1dd879be1e525aea8e4c0.ctex"]
+source_file="res://Actors/Train/SchweizerKorkodil_side.png"
+dest_files=["res://.godot/imported/SchweizerKorkodil_side.png-c88729a72f86e4ca631772bc8ae6dde9.ctex"]
 
 [params]
 
