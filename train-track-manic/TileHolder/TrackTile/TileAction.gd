@@ -24,18 +24,26 @@ func set_on_place():
 	is_placed2 = true
 	modulate.a = 1
 	set_as_top_level(false)
-
+	
+	await get_tree().create_timer(0.0001).timeout
+	
 	if has_node("Area2D"):
-		$Area2D.input_pickable = false
-		$Area2D.monitoring = false
-		$Area2D.monitorable = false
+		var area:Area2D = get_node("Area2D")
+		area.input_pickable = true
+		area.monitoring = true
+		area.monitorable = true
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if is_placed2:
+	if not is_placed2:
 		return
-
+	
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.is_pressed():
 		is_placed2 = true
 		Event.create_new_tile.emit(self)
+		if has_node("Area2D"):
+			var area:Area2D = get_node("Area2D")
+			area.input_pickable = false
+			area.monitoring = false
+			area.monitorable = false

@@ -34,6 +34,10 @@ func _input(event):
 
 
 func create_new(object1):
+	var cell:GridCell = _get_target_cell(get_global_mouse_position())
+	if  cell != null:
+		cell.full = false
+	
 	if object1.get_parent():
 		object1.get_parent().remove_child(object1)
 	add_child(object1)

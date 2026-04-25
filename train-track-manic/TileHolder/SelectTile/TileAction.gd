@@ -26,3 +26,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 		var tile = TILE_SCENE.instantiate()
 		tile.set_tile(tile_type)
 		Event.create_new_tile.emit(tile)
+		if tile.has_node("Area2D"):
+			tile.get_node("Area2D").input_pickable = false
+			tile.get_node("Area2D").monitoring = false
+			tile.get_node("Area2D").monitorable = false
