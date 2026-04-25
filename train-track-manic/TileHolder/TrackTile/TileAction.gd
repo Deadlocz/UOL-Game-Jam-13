@@ -2,13 +2,24 @@ extends Node2D
 
 var tile_type:int
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	tile_type = 1
-	pass # Replace with function body.
+# constructor for 
+func _init(type:int) -> void:
+	_set_tile(type)
+	_set_logic(type)
+	pass
+
 
 func _set_tile(type: int) -> void:
+	tile_type = type
 	%TrackTypes.frame = tile_type;
+
+func _set_logic(type: int):
+	#TODO add logic depending on what is needed
+	match(type):
+		0:
+			pass
+		1:
+			pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
