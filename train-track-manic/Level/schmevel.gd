@@ -12,10 +12,6 @@ var isValid = false
 
 func _ready() -> void:
 	gridSize = Vector2(grid.cellWidth, grid.cellHeight)
-	var station_scene = load("res://Actors/Station/Station.tscn")
-	var station = station_scene.instantiate()
-	add_child(station)
-	station.global_position = Vector2(13,7)
 	
 func _input(event):
 	# showcase only
