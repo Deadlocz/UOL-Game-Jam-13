@@ -25,7 +25,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="TrackTile" type="Node2D" unique_id=1383102837]
+[node name="TrackTile" type="Sprite2D" unique_id=391364208]
 script = ExtResource("1_bjtlh")
 
 [node name="TrackTypes" type="AnimatedSprite2D" parent="." unique_id=1622758388]
@@ -33,10 +33,4 @@ unique_name_in_owner = true
 position = Vector2(63, 63)
 sprite_frames = SubResource("SpriteFrames_5gaxt")
 
-[node name="Button" type="Button" parent="TrackTypes" unique_id=768158010]
-offset_left = -63.0
-offset_top = -63.0
-offset_right = 64.571915
-offset_bottom = 64.534546
-
-[connection signal="pressed" from="TrackTypes/Button" to="." method="_on_action_pressed"]
+[node name="TileMapLayer" type="TileMapLayer" parent="TrackTypes" unique_id=242064565]

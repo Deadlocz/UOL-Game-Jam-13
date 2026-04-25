@@ -1,9 +1,39 @@
 [gd_scene format=4 uid="uid://k0o5jkpt3rxt"]
 
+[ext_resource type="Script" uid="uid://dl4kh0mityowt" path="res://Level/level.gd" id="1_nk1il"]
 [ext_resource type="TileSet" uid="uid://b4a2cqdy5q21w" path="res://Level/rails.tres" id="1_o6mkr"]
+[ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://grid_map/Grid.tscn" id="2_d6qko"]
+[ext_resource type="TileSet" uid="uid://chqweth4bxyll" path="res://Level/ground.tres" id="3_22cqp"]
+[ext_resource type="TileSet" uid="uid://da6we7qbqf3cf" path="res://Level/accessoire.tres" id="4_wqlfs"]
 
 [node name="Level" type="Node2D" unique_id=1004307011]
+script = ExtResource("1_nk1il")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1587177521]
-tile_map_data = PackedByteArray("AAAEAAIAAAAAAAAAAAAEAAMAAAAAAAEAAAAEAAQAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAABAAIAAAAFAAcAAAACAAMAAAAGAAcAAAACAAMAAAAHAAcAAAACAAMAAAAIAAcAAAACAAMAAAAJAAcAAAACAAMAAAAKAAcAAAACAAMAAAALAAcAAAACAAMAAAAMAAcAAAACAAMAAAANAAcAAAADAAAAAAANAAgAAAABAAIAAAAOAAgAAAADAAAAAAAOAAkAAAAAAAEAAAAOAAoAAAABAAIAAAAPAAoAAAACAAMAAAAQAAoAAAACAAMAAAARAAoAAAADAAAAAAARAAsAAAABAAIAAAASAAsAAAACAAMAAAATAAsAAAACAAMAAAAUAAsAAAADAAAAAAAUAAwAAAABAAIAAAAVAAwAAAACAAMAAAAWAA0AAAAAAAIAAAAWAAwAAAACAAAAAAAXAAwAAAACAAMAAAAYAAsAAAAAAAEAAAAYAAoAAAAAAAEAAAAYAAkAAAAAAAEAAAAYAAgAAAAAAAAAAAAYAAwAAAADAAIAAAA=")
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1720023518]
+tile_map_data = PackedByteArray("AAAFAAIAAQAAAAAAAAAFAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAYAAQAAAAAAAAADAAcAAQAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgAAQAAAAAAAAAHAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAANAAYAAQAAAAAAAAAKAAgAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAQAAAAAAAAANAAgAAQAAAAAAAAANAAcAAQAAAAAAAAA=")
+tile_set = ExtResource("3_22cqp")
+
+[node name="Accessoire" type="TileMapLayer" parent="." unique_id=542044567]
+tile_set = ExtResource("4_wqlfs")
+
+[node name="Rails" type="TileMapLayer" parent="." unique_id=1587177521]
+tile_map_data = PackedByteArray("AAAEAAIAAAAAAAAAAAAEAAMAAAAAAAEAAAAEAAQAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAABAAIAAAAFAAcAAAACAAMAAAAGAAcAAAACAAMAAAAHAAcAAAACAAMAAAAIAAcAAAACAAMAAAAJAAcAAAACAAMAAAAKAAcAAAACAAMAAAALAAcAAAACAAMAAAAMAAcAAAACAAMAAAA=")
 tile_set = ExtResource("1_o6mkr")
+
+[node name="Grid" parent="." unique_id=798381590 instance=ExtResource("2_d6qko")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 96.0
+offset_top = 32.0
+offset_right = 576.0
+offset_bottom = 512.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+cellWidth = 96
+cellHeight = 96
+
+[connection signal="gui_input" from="Grid" to="." method="_on_grid_gui_input"]

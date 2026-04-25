@@ -1,5 +1,7 @@
-extends Node2D
+extends Sprite2D
 
+var tile_type:int
+@export var rect: Rect2
 
 # constructor for setting the tile type
 # func _init(type:int) -> void:
@@ -21,6 +23,15 @@ func set_logic(type: int):
 		1:
 			pass
 
+	
+func get_global_rect():
+	return Rect2(
+		global_position - rect.size / 2,
+		rect.size
+	)
+	
+func set_on_place():
+	modulate.a = 1
 
 func _on_action_pressed() -> void:
 	print("hi")
