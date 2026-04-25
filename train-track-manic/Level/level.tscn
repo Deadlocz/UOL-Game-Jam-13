@@ -33,10 +33,11 @@ grow_horizontal = 1
 grow_vertical = 1
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 6
-width = 6
-cellWidth = 96
-cellHeight = 96
+columns = 10
+width = 10
+height = 7
+cellWidth = 32
+cellHeight = 32
 
 [node name="Holder" parent="." unique_id=91845701 instance=ExtResource("6_nk1il")]
 position = Vector2(748, 7)

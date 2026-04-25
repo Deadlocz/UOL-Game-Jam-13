@@ -1,3 +1,4 @@
+class_name GridCell
 extends PanelContainer
 
 @export var full = false

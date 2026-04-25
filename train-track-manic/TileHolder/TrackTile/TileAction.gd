@@ -13,6 +13,7 @@ func _ready() -> void:
 	pass
 
 func set_tile(type: int) -> void:
+	tile_type = type
 	%TrackTypes.frame = type;
 	set_logic(type)
 
@@ -24,10 +25,6 @@ func set_logic(type: int):
 		1:
 			pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func get_global_rect():
 	return Rect2(
 		global_position - rect.size / 2,
@@ -38,7 +35,9 @@ func set_on_place():
 	modulate.a = 1
 
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
-		print("clicked")
-		Event.create_new_tile.emit(preload("res://TileHolder/TrackTile/Tile.tscn"))
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			var Tile = preload("res://TileHolder/TrackTile/Tile.tscn").instantiate()
+			Tile.set_tile(tile_type)
+			Event.create_new_tile.emit(Tile)
