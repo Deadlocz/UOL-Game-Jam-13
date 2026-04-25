@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var grid: GridContainer = $Grid
 
-const OBJECT = preload("res://TileHolder/TrackTile/Tile.tscn")
 
 var object: TrackTile = null
 var targetCell: GridCell = null
@@ -17,6 +16,7 @@ func _ready() -> void:
 	Bgm.sound_main()
 
 func fill_start_cells():
+	#TODO: das muss hier irgendwie in das grid selbst, damit das getrennt sein kann
 	var cells = grid.get_children()
 	var columns = 5
 	# Erste Reihe (Zeile 0) füllen: Indizes 0 bis columns-1
