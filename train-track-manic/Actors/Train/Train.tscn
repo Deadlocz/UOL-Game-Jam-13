@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bit1ui22aykpx"]
 
 [ext_resource type="Script" uid="uid://bj71reg85o4d7" path="res://Actors/Train/train.gd" id="1_q62qj"]
-[ext_resource type="Texture2D" uid="uid://cevxnvakewmme" path="res://Level/test.png" id="2_6dyiy"]
+[ext_resource type="Texture2D" uid="uid://bbeymnwbai1uo" path="res://Actors/Train/V100.png" id="2_q62qj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q62qj"]
 
@@ -12,7 +12,10 @@ script = ExtResource("1_q62qj")
 shape = SubResource("RectangleShape2D_q62qj")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=190236208]
-texture = ExtResource("2_6dyiy")
+texture = ExtResource("2_q62qj")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2014716535]
+path_desired_distance = 10.0
+target_desired_distance = 0.1
 path_postprocessing = 1
+simplify_path = true

@@ -43,9 +43,6 @@ position = Vector2(431, 245)
 
 [node name="Train" parent="." unique_id=1029754237 node_paths=PackedStringArray("target") instance=ExtResource("7_g0nup")]
 position = Vector2(144, 83)
-target = NodePath("../Station2")
-
-[node name="Station2" parent="." unique_id=836404879 instance=ExtResource("6_kx012")]
-position = Vector2(340, 274)
+target = NodePath("../Station")
 
 [connection signal="gui_input" from="Grid" to="." method="_on_grid_gui_input"]
