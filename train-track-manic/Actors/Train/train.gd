@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 50.0
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
+
 @export var target: Node2D
 
 # set le movement target
@@ -32,6 +33,13 @@ func _move_towards_station() -> void:
 	else:
 		_velocity_computed(new_velocity)
 	
+	# get the velocity and change frames depending on x direction
+
+	if (abs(velocity.x) < abs(velocity.y)):
+		%AnimatedSprite2D.frame = 0
+	else:
+		%AnimatedSprite2D.frame = 1
+		
 	# do la movement
 	move_and_slide()
 
