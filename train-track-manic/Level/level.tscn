@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dl4kh0mityowt" path="res://Level/level.gd" id="1_nk1il"]
 [ext_resource type="TileSet" uid="uid://b4a2cqdy5q21w" path="res://Level/rails.tres" id="1_o6mkr"]
 [ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://grid_map/Grid.tscn" id="2_d6qko"]
-[ext_resource type="TileSet" uid="uid://chqweth4bxyll" path="res://Level/ground.tres" id="3_22cqp"]
-[ext_resource type="TileSet" uid="uid://da6we7qbqf3cf" path="res://Level/accessoire.tres" id="4_wqlfs"]
+[ext_resource type="TileSet" path="res://Level/ground.tres" id="3_22cqp"]
+[ext_resource type="TileSet" uid="uid://dwjjjcil6r31r" path="res://Level/accessoire.tres" id="4_wqlfs"]
 [ext_resource type="PackedScene" uid="uid://d5ryhf3lp2yi" path="res://TileHolder/TrackHolder.tscn" id="6_nk1il"]
 
 [node name="Level" type="Node2D" unique_id=1004307011]
