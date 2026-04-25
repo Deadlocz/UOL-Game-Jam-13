@@ -1,13 +1,26 @@
 [gd_scene format=3 uid="uid://d5ryhf3lp2yi"]
 
-[node name="Node2D" type="Node2D" unique_id=91845701]
+[ext_resource type="Script" uid="uid://b88uww1icsg" path="res://TileHolder/track_holder.gd" id="1_ul165"]
+
+[node name="Holder" type="Node2D" unique_id=91845701]
+script = ExtResource("1_ul165")
+tile_path = "uid://toyrxvks063b"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=631933671]
 offset_right = 527.0
 offset_bottom = 434.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1944576632]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Tile1" type="Container" parent="ColorRect" unique_id=1516909391]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 132.0
+offset_right = 186.0
+offset_bottom = 225.0
+
+[node name="Tile2" type="Container" parent="ColorRect" unique_id=1884460367]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 152.0
+offset_right = 438.0
+offset_bottom = 245.0
