@@ -1,20 +1,20 @@
 extends Node2D
 @export_file("*.tscn") var tile_path
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var tile_scene = load("res://TileHolder/TrackTile/Tile.tscn")
-	var tile_instance = tile_scene.instantiate()
-	var tile_instance2 = tile_scene.instantiate()
+	var grid = $ColorRect/GridContainer
+	
+	for i in range(15):
+		var tile_instance = tile_scene.instantiate()
+		tile_instance.set_tile(i)
+		
+		var target = grid.get_child(i)
+		target.add_child(tile_instance)
 	
 	#TODO set here the different tile types
-	
-	tile_instance.set_tile(1)
-	$ColorRect/Tile1.add_child(tile_instance)
-	$ColorRect/Tile2.add_child(tile_instance2)
-	
 	pass
-	 # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
