@@ -13,15 +13,8 @@ script = ExtResource("1_i7yr1")
 modulate = Color(1.3957917e-06, 0.41966248, 0.31213915, 1)
 texture = ExtResource("1_v4yli")
 
-[node name="TrainDetectionArea" type="Area2D" parent="." unique_id=165800267]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrainDetectionArea" unique_id=31494546]
 shape = SubResource("RectangleShape2D_i7yr1")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1117637506]
-position = Vector2(-16, -16)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-tile_set = SubResource("TileSet_i7yr1")
 
 [node name="Label" type="Label" parent="." unique_id=539563399]
 unique_name_in_owner = true
