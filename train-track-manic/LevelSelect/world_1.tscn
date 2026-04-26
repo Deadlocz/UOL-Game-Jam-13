@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mcgrpe866k8s" path="res://Menu/buttonIn.png" id="8_4ksfa"]
 [ext_resource type="Texture2D" uid="uid://csgyhb0yjwxsa" path="res://Menu/buttonHover.png" id="9_woosb"]
 [ext_resource type="PackedScene" uid="uid://tmoj74mqbmef" path="res://Menu/MainManuButton.tscn" id="10_4ksfa"]
+[ext_resource type="Texture2D" uid="uid://g6i3xy4c4ws5" path="res://Level/buttonDisabled.png" id="10_woosb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pc1v6"]
 font = ExtResource("5_rno4i")
@@ -157,11 +158,14 @@ offset_right = 716.7495
 offset_bottom = 202.9282
 rotation = 1.5707964
 scale = Vector2(1.215, 1.215)
+disabled = true
 texture_normal = ExtResource("7_rtrb8")
 texture_pressed = ExtResource("8_4ksfa")
 texture_hover = ExtResource("9_woosb")
+texture_disabled = ExtResource("10_woosb")
 
 [node name="Label" type="Label" parent="nextworld" unique_id=1951443811]
+modulate = Color(0.70519364, 0.70519364, 0.7051936, 1)
 layout_mode = 0
 offset_left = 19.778
 offset_top = 5.79
