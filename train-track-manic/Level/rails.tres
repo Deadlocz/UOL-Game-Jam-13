@@ -57,10 +57,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-16, 4, -16, -4, 16, -4
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2djex"]
-vertices = PackedVector2Array(4, -4, 16, -4, 16, 4, 4, 4, 4, 16, -4, 16, -4, 4, -4, -4, -16, 4, -16, -4, 4, -16, -4, -16)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 3, 6, 7), PackedInt32Array(6, 8, 9, 7), PackedInt32Array(10, 0, 7, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(16, -4, 16, 4, 4, 4, 4, 16, -4, 16, -4, 4, -16, 4, -16, -4, -4, -4, -4, -16, 4, -16, 4, -4)])
-agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1afr6"]
 vertices = PackedVector2Array(4, -4, 16, -4, 16, 4, -16, 4, -16, -4, -4, -4, 4, -16, -4, -16)
