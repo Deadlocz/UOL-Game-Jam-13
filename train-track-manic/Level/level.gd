@@ -10,11 +10,17 @@ var targetCell: GridCell = null
 var objectCells: Array[GridCell] = []
 var isValid := false
 
+var placement_disabled:bool = false
+
 
 func _ready() -> void:
 	Event.create_new_tile.connect(create_new)
 	Event.move_tile.connect(create_new)
 	Event.remove_tile.connect(remove)
+	
+	Event.start_trains.connect(_allow_to_place)
+	Event.stop_trains.connect(_stop_place)
+	
 	fill_start_cells()
 	Bgm.sound_main()
 
@@ -31,12 +37,16 @@ func fill_start_cells():
 			cell.change_color(Color.RED)
 
 func _input(event):
+	if placement_disabled:
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and isValid:
 			_place_placement()
 
 
 func create_new(object1):
+	if placement_disabled:
+		return
 	if object:
 		return
 	var cell:GridCell = _get_target_cell(get_global_mouse_position())
@@ -96,9 +106,9 @@ func _reset_highlight():
 	for child: GridCell in grid.get_children():
 		child.change_color(Color(0.5, 0.5, 0.5, 0.0))
 
-
-
 func _place_placement():
+	if placement_disabled:
+		return
 	if not object or not targetCell:
 		return
 	object.set_on_place()
@@ -108,6 +118,12 @@ func _place_placement():
 	objectCells.clear()
 	isValid = false
 	_reset_highlight()
+
+func _allow_to_place():
+	placement_disabled = true
+
+func _stop_place():
+	placement_disabled = false
 
 func remove(tile:TrackTile) -> void:
 	if not targetCell:

@@ -65,7 +65,7 @@ func _on_desel_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 				var t: SelectTile = tile["value"]
 				if t.is_placed:
 					t.is_placed = false
-				t.times += 1
+				t.times + 1
 				t.set_tile(tile_type)
 		Event.remove_tile.emit(self)
 		pass

@@ -6,8 +6,21 @@ var tile_type: int
 @export var level: Node2D
 @export var times: int
 @export var is_placed: bool = false
+var is_train_going:bool = false
+
+var placement_disabled:bool = false
 
 const TILE_SCENE := preload("res://TileHolder/TrackTile/Tile.tscn")
+
+func _ready() -> void:
+	Event.start_trains.connect(_disable_placement)
+	Event.stop_trains.connect(_enable_placement)
+
+func _enable_placement():
+	placement_disabled = false
+
+func _disable_placement():
+	placement_disabled = true
 
 func set_times(time: int) -> void:
 	times = time - 1
@@ -24,7 +37,8 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
-	and event.is_pressed():
+	and event.is_pressed() \
+	and !placement_disabled:
 		if(times <= 0):
 			is_placed = true
 			%TileMapLayer.erase_cell(Vector2i(0,0))

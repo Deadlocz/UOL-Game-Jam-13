@@ -8,8 +8,6 @@ var childs: Array = []
 @export var MISSION_ONE:Array = [0, 2, 5, 8, 10]
 @export var MISSION_ONE_TIMES:Array = [0, 3, 1, 8, 9]
 
-
-
 func _ready() -> void:
 	activate_certain_tiles(MISSION_ONE)
 	#TODO set here the different tile types
