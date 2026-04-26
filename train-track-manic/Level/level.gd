@@ -24,7 +24,7 @@ func _ready() -> void:
 	Event.create_new_tile.connect(create_new)
 	Event.move_tile.connect(create_new)
 	Event.remove_tile.connect(remove)
-	
+	Pause.enabled = true
 	Event.start_trains.connect(_allow_to_place)
 	Event.stop_trains.connect(_stop_place)
 	Event.train_reached_station.connect(on_train_reached_station)

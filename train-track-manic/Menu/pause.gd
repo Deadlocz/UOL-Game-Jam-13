@@ -1,8 +1,10 @@
-extends Node2D
+extends CanvasLayer
 
+var enabled:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hide()
 	pass # Replace with function body.
 
 
@@ -10,10 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-
-func _on_texture_button_pressed() -> void:
-	Pause.hide()
-	Pause.enabled = false
-	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
-	pass # Replace with function body.
+func _unhandled_key_input(event: InputEvent) -> void:
+	if enabled:
+		if event.is_action_pressed("Pause"):
+			visible = !visible
