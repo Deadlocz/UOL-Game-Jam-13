@@ -55,6 +55,7 @@ func create_train(type: Enum.TrainType) -> Train:
 	train.origin_station_label = label
 	return train
 
+
 ## finds station by looking up every station in group
 func get_target_station(target_label: String) -> Station:
 	var stations := get_tree().get_nodes_in_group("Station")
