@@ -70,6 +70,10 @@ func on_train_reached_station(train_type: Enum.TrainType) -> void:
 
 
 func count_trains() -> void:
+	slow_trains = 0
+	normal_trains = 0
+	fast_trains = 0
+	
 	## count trains currently set in the level as a target
 	var stations = get_tree().get_nodes_in_group("Station")
 	for station: Station in stations:
