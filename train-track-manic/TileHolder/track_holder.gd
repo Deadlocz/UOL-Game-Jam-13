@@ -8,6 +8,7 @@ func _ready() -> void:
 	for i in range(15):
 		var tile_instance = tile_scene.instantiate() as SelectTile
 		tile_instance.set_tile(i)
+		tile_instance.set_times(2)
 		
 		var target = grid.get_child(i)
 		target.add_child(tile_instance)

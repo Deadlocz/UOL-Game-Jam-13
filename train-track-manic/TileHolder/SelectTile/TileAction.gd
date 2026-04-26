@@ -4,9 +4,13 @@ extends Node2D
 var tile_type: int
 @export var rect: Rect2
 @export var level: Node2D
+@export var times: int
 @export var is_placed: bool = false
 
 const TILE_SCENE := preload("res://TileHolder/TrackTile/Tile.tscn")
+
+func set_times(time: int) -> void:
+	times = time - 1
 
 func set_tile(type: int) -> void:
 	tile_type = type
@@ -21,8 +25,12 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.is_pressed():
-		is_placed = true
-
+		if(times <= 0):
+			is_placed = true
+			%TileMapLayer.erase_cell(Vector2i(0,0))
+		else:
+			times -= 1
+		
 		var tile = TILE_SCENE.instantiate()
 		tile.set_tile(tile_type)
 		Event.create_new_tile.emit(tile)

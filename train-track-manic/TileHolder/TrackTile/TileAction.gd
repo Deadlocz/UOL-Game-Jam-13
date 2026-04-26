@@ -40,10 +40,24 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.is_pressed():
-		is_placed2 = true
+		is_placed2 = false
 		Event.create_new_tile.emit(self)
 		if has_node("Area2D"):
 			var area:Area2D = get_node("Area2D")
 			area.input_pickable = false
 			area.monitoring = false
 			area.monitorable = false
+
+
+func _on_desel_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton \
+	and event.button_index == MOUSE_BUTTON_RIGHT \
+	and event.is_pressed() and not is_placed2:
+		#TODO add Tile to selectable tiles
+		printt("desel")
+		for tiles:ColorRect in $Holder/ColorRect/GridContainer.get_children(true):
+			var tile:SelectTile = tiles.get_node("SelectTile")
+			if tile.tile_type == self.tile_type:
+				tile.times + 1;
+		Event.remove_tile.emit(self)
+		pass

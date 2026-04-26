@@ -12,6 +12,7 @@ var isValid := false
 func _ready() -> void:
 	Event.create_new_tile.connect(create_new)
 	Event.move_tile.connect(create_new)
+	Event.remove_tile.connect(remove)
 	fill_start_cells()
 	Bgm.sound_main()
 
@@ -102,4 +103,14 @@ func _place_placement():
 	targetCell = null
 	objectCells.clear()
 	isValid = false
+	_reset_highlight()
+
+func remove(tile:TrackTile) -> void:
+	object = tile
+	object.modulate.a = 0
+	targetCell.full = false
+	targetCell = null
+	object = null
+	isValid = true
+	objectCells.clear()
 	_reset_highlight()
