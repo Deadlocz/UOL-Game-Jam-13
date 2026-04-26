@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var grid: GridContainer = $Grid
+@export var grid: GridContainer
 
 
 var object: TrackTile = null

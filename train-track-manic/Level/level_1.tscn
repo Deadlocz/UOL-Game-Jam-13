@@ -10,8 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://e0bhy6f25e6y" path="res://Actors/Station/Station.tscn" id="8_w3gjf"]
 [ext_resource type="Script" uid="uid://ckw0hvfb2b3t3" path="res://Actors/Station/train_schedule.gd" id="9_mkoc1"]
 
-[node name="Level1" type="Node2D" unique_id=1004307011]
+[sub_resource type="Resource" id="Resource_mkoc1"]
+script = ExtResource("9_mkoc1")
+target = "B"
+metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
+
+[node name="Level1" type="Node2D" unique_id=1004307011 node_paths=PackedStringArray("grid")]
 script = ExtResource("1_8uf8f")
+grid = NodePath("Puzzle/Grid")
 
 [node name="UI" type="Node" parent="." unique_id=61453902]
 
@@ -61,9 +67,10 @@ cellHeight = 32
 
 [node name="Station" parent="Puzzle" unique_id=647371737 instance=ExtResource("8_w3gjf")]
 position = Vector2(112, 112)
-trains = Array[ExtResource("9_mkoc1")]([null])
+trains = Array[ExtResource("9_mkoc1")]([SubResource("Resource_mkoc1")])
 
 [node name="Station2" parent="Puzzle" unique_id=1708751712 instance=ExtResource("8_w3gjf")]
 position = Vector2(304, 112)
+label = "B"
 
 [connection signal="gui_input" from="Puzzle/Grid" to="." method="_on_grid_gui_input"]
