@@ -64,4 +64,3 @@ offset_right = 482.0
 offset_bottom = 66.0
 
 [connection signal="gui_input" from="Grid" to="." method="_on_grid_gui_input"]
-[connection signal="pressed" from="TrainButton" to="Train" method="_on_train_button_pressed"]

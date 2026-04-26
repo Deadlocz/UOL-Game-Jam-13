@@ -8,6 +8,8 @@ var toggle = false
 func _pressed() -> void:
 	toggle = !toggle
 	if toggle:
+		Event.start_trains.emit()
 		label.text = str("Stop Train")
 	else:
+		Event.stop_trains.emit()
 		label.text = str("Start Train")

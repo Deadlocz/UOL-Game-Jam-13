@@ -7,6 +7,10 @@ var running = true
 
 @export var target: Node2D
 
+func _ready() -> void:
+	Event.start_trains.connect(_on_train_button_pressed)
+	Event.stop_trains.connect(_on_train_button_pressed)
+
 # set le movement target
 func set_movement_target(movement_target: Vector2):
 	nav.target_position = movement_target
