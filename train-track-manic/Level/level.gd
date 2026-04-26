@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var grid: GridContainer
+@export var disabled_grid_indices: Array[int] = []
 ## Rail tiles are put here
 @export var rails_node: Node2D
 
@@ -21,20 +22,23 @@ func _ready() -> void:
 	Event.start_trains.connect(_allow_to_place)
 	Event.stop_trains.connect(_stop_place)
 	
+	await get_tree().process_frame
 	fill_start_cells()
+	
 	Bgm.sound_main()
 
+
 func fill_start_cells():
-	#TODO: das muss hier irgendwie in das grid selbst, damit das getrennt sein kann
+	disabled_grid_indices = [0, 1 ,2, 3, 4]
+	printt(grid.get_begin())
 	var cells = grid.get_children()
-	var columns = 5
-	# Erste Reihe (Zeile 0) füllen: Indizes 0 bis columns-1
-	
-	for i in range(columns):
-		var cell = cells[i] as GridCell
-		if cell:
-			cell.full = true
-			cell.change_color(Color.RED)
+	for idx in disabled_grid_indices:
+		if idx >= 0 and idx < cells.size():
+			var cell := cells[idx] as GridCell
+			if cell:
+				cell.full = true
+				cell.disabled = true
+				cell.change_color(Color.BLACK)
 
 func _input(event):
 	if placement_disabled:
@@ -104,7 +108,10 @@ func _check_and_highlight_cells():
 
 func _reset_highlight():
 	for child: GridCell in grid.get_children():
-		child.change_color(Color(0.5, 0.5, 0.5, 0.0))
+		if child.disabled:
+			child.change_color(Color.RED)
+		else:
+			child.change_color(Color(0.5, 0.5, 0.5, 0.0))
 
 func _place_placement():
 	if placement_disabled:
