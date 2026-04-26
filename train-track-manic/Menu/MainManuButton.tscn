@@ -15,17 +15,18 @@ position = Vector2(-64, -32)
 offset_left = 24.0
 offset_top = 16.0
 offset_right = 88.0
-offset_bottom = 64.0
+offset_bottom = 48.0
 scale = Vector2(1.35, 1.35)
 texture_normal = ExtResource("2_7jbd5")
 texture_hover = ExtResource("3_l8443")
 
-[node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=1672948192]
-offset_left = 48.0
-offset_top = 24.0
-offset_right = 88.0
-offset_bottom = 64.0
-scale = Vector2(0.725, 0.725)
+[node name="TextureRect" type="TextureRect" parent="Node2D/TextureButton" unique_id=1672948192]
+layout_mode = 0
+offset_left = 17.777779
+offset_top = 5.9259257
+offset_right = 57.77778
+offset_bottom = 45.925926
+scale = Vector2(0.495, 0.495)
 texture = ExtResource("4_dex5h")
 metadata/_edit_use_anchors_ = true
 

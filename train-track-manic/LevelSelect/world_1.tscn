@@ -171,7 +171,7 @@ scale = Vector2(0.92, 0.92)
 text = "/\\"
 
 [node name="MainManuButton" parent="." unique_id=930984212 instance=ExtResource("10_4ksfa")]
-position = Vector2(528, -16)
+position = Vector2(592, 16)
 
 [connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level1" to="Level1/Station" method="_on_button_pressed"]
