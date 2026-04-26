@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var grid: GridContainer
+## Rail tiles are put here
+@export var rails_node: Node2D
 
 
 var object: TrackTile = null
@@ -43,7 +45,7 @@ func create_new(object1):
 	
 	if object1.get_parent():
 		object1.get_parent().remove_child(object1)
-	add_child(object1)
+	rails_node.add_child(object1)
 	object1.global_position = get_global_mouse_position()
 	object = object1
 
