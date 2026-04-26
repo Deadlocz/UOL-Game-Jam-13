@@ -21,6 +21,8 @@ const FAST_TRAIN_SCENE = preload("res://Actors/Train/FastTrain.tscn")
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	Event.start_trains.connect(on_start_trains)
 
 ## main function that spawns trains
