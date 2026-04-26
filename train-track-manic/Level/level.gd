@@ -38,6 +38,18 @@ func _ready() -> void:
 	
 	Bgm.sound_main()
 
+func _cancel_selected_tile():
+	if object:
+		object.global_position = object.original_position
+		object.modulate.a = 1.0
+		object.queue_free()
+	
+	object = null
+	targetCell = null
+	objectCells.clear()
+	isValid = false
+	_reset_highlight()
+	
 
 func on_train_reached_station(train_type: Enum.TrainType) -> void:
 	print(train_type, " reached station")
@@ -69,7 +81,7 @@ func count_trains() -> void:
 					normal_trains += 1
 				Enum.TrainType.FAST:
 					fast_trains += 1
-	printt("trains countet", slow_trains, normal_trains, fast_trains)
+	printt("trains counted", slow_trains, normal_trains, fast_trains)
 	
 
 func fill_start_cells():
@@ -95,6 +107,10 @@ func create_new(object1):
 		return
 	if object:
 		return
+	
+	object1.original_position = object1.global_position
+	
+	object1.modulate.a = 1.0
 	var cell:GridCell = _get_target_cell(get_global_mouse_position())
 	if  cell != null:
 		cell.full = false
@@ -170,6 +186,7 @@ func _place_placement():
 
 func _allow_to_place():
 	placement_disabled = true
+	_cancel_selected_tile()
 
 func _stop_place():
 	placement_disabled = false
@@ -183,7 +200,7 @@ func remove(tile:TrackTile) -> void:
 	object.modulate.a = 0
 	targetCell.full = false
 	targetCell = null
-	object = null	
+	object.queue_free()
 	isValid = true
 	objectCells.clear()
 	_reset_highlight()

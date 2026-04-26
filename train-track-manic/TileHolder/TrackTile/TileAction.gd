@@ -6,12 +6,25 @@ var tile_type: int
 @export var level: Node2D
 @export var is_placed2: bool = false
 
+var original_position: Vector2
+
+var placement_disabled = false
+
 var holder: Node2D
 
 const SOURCE_ID := 0
 
+
+func _enable_placement():
+	placement_disabled = false
+
+func _disable_placement():
+	placement_disabled = true
+
 func _ready() -> void:
 	holder = get_tree().get_first_node_in_group("Holder")
+	Event.start_trains.connect(_disable_placement)
+	Event.stop_trains.connect(_enable_placement)
 
 func set_tile(type: int) -> void:
 	tile_type = type
@@ -44,7 +57,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_LEFT \
-	and event.is_pressed():
+	and event.is_pressed() and not placement_disabled:
 		is_placed2 = false
 		Event.create_new_tile.emit(self)
 		if has_node("Area2D"):
@@ -57,7 +70,8 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 func _on_desel_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton \
 	and event.button_index == MOUSE_BUTTON_RIGHT \
-	and event.is_pressed() and not is_placed2:
+	and event.is_pressed() and not is_placed2 \
+	and not placement_disabled:
 		#TODO add Tile to selectable tiles
 		printt("desel")
 		for tile in holder.childs:
