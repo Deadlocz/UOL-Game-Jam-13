@@ -108,6 +108,9 @@ func _place_placement():
 	_reset_highlight()
 
 func remove(tile:TrackTile) -> void:
+	if not targetCell:
+		return
+	
 	object = tile
 	object.modulate.a = 0
 	targetCell.full = false

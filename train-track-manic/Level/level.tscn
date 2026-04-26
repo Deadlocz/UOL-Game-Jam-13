@@ -6,8 +6,6 @@
 [ext_resource type="TileSet" uid="uid://chqweth4bxyll" path="res://Level/ground.tres" id="3_22cqp"]
 [ext_resource type="TileSet" uid="uid://dwjjjcil6r31r" path="res://Level/accessoire.tres" id="4_wqlfs"]
 [ext_resource type="PackedScene" uid="uid://d5ryhf3lp2yi" path="res://TileHolder/TrackHolder.tscn" id="6_nk1il"]
-[ext_resource type="PackedScene" uid="uid://bit1ui22aykpx" path="res://Actors/Train/Train.tscn" id="7_22cqp"]
-[ext_resource type="PackedScene" uid="uid://e0bhy6f25e6y" path="res://Actors/Station/Station.tscn" id="8_wqlfs"]
 [ext_resource type="PackedScene" uid="uid://d4fxy1jx46wg0" path="res://Actors/Train/Button/TrainButton.tscn" id="9_wqlfs"]
 
 [node name="Level" type="Node2D" unique_id=1004307011]
@@ -21,46 +19,60 @@ tile_set = ExtResource("3_22cqp")
 tile_set = ExtResource("4_wqlfs")
 
 [node name="Rails" type="TileMapLayer" parent="." unique_id=1587177521]
-tile_map_data = PackedByteArray("AAAEAAIAAAAAAAAAAAAEAAMAAAAAAAEAAAAEAAQAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAcAAAABAAIAAAAFAAcAAAACAAMAAAAGAAcAAAACAAMAAAAHAAcAAAACAAMAAAAIAAcAAAACAAMAAAAJAAcAAAACAAMAAAAKAAcAAAACAAMAAAALAAcAAAACAAMAAAAMAAcAAAACAAMAAAA=")
+tile_map_data = PackedByteArray("AAAEAAMAAAACAAMAAAAFAAMAAAACAAMAAAAHAAMAAAACAAMAAAAIAAMAAAACAAMAAAAJAAMAAQAAAAAAAQADAAMAAQAAAAAAAQA=")
 tile_set = ExtResource("1_o6mkr")
 
 [node name="Grid" parent="." unique_id=798381590 instance=ExtResource("2_d6qko")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 96.0
-offset_top = 32.0
-offset_right = 576.0
-offset_bottom = 512.0
+offset_left = 192.0
+offset_top = 96.0
+offset_right = 224.0
+offset_bottom = 128.0
 grow_horizontal = 1
 grow_vertical = 1
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 10
-width = 10
-height = 7
+columns = 1
+width = 1
+height = 1
+cellWidth = 32
+cellHeight = 32
+
+[node name="Grid2" parent="." unique_id=2130844325 instance=ExtResource("2_d6qko")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 288.0
+offset_top = 96.0
+offset_right = 320.0
+offset_bottom = 128.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 1
+width = 1
+height = 1
 cellWidth = 32
 cellHeight = 32
 
 [node name="Holder" parent="." unique_id=91845701 instance=ExtResource("6_nk1il")]
 unique_name_in_owner = true
-position = Vector2(748, 7)
-scale = Vector2(2, 2)
-
-[node name="Train" parent="." unique_id=1029754237 node_paths=PackedStringArray("target") instance=ExtResource("7_22cqp")]
-position = Vector2(145, 48)
-target = NodePath("../Station2")
-
-[node name="Station" parent="." unique_id=436988140 instance=ExtResource("8_wqlfs")]
-position = Vector2(431, 240)
-
-[node name="Station2" parent="." unique_id=686558500 instance=ExtResource("8_wqlfs")]
-position = Vector2(304, 207)
+position = Vector2(480, 32)
 
 [node name="TrainButton" parent="." unique_id=1538748435 instance=ExtResource("9_wqlfs")]
 offset_left = 418.0
 offset_top = 34.0
 offset_right = 482.0
 offset_bottom = 66.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=471353477]
+position = Vector2(224, 128)
+enabled = false
+zoom = Vector2(1.5, 1.5)
+
+[node name="Stations" type="Node" parent="." unique_id=1645973348]
 
 [connection signal="gui_input" from="Grid" to="." method="_on_grid_gui_input"]

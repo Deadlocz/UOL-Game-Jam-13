@@ -1,3 +1,4 @@
+class_name Train
 extends CharacterBody2D
 
 var speed = 50.0
