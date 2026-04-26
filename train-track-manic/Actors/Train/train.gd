@@ -59,4 +59,5 @@ func _velocity_computed(safe_velocity: Vector2) -> void:
 func _on_train_button_pressed() -> void:
 	if running:
 		queue_free()
+		
 	running = !running

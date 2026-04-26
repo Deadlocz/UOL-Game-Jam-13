@@ -7,6 +7,8 @@ const SLOW_TRAIN_SCENE = preload("res://Actors/Train/SlowTrain.tscn")
 const NORMAL_TRAIN_SCENE = preload("res://Actors/Train/TrainYellow.tscn") # Das macht sinn
 const FAST_TRAIN_SCENE = preload("res://Actors/Train/FastTrain.tscn")
 
+var spawning_enabled := false
+var spawn_token := 0
 
 ## Label is used to find this station as a target
 @export var label: String = "A":
@@ -24,17 +26,30 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	Event.start_trains.connect(on_start_trains)
+	Event.stop_trains.connect(on_stop_trains)
 
+func on_stop_trains() -> void:
+	spawning_enabled = false
+	spawn_token += 1
 ## main function that spawns trains
 func on_start_trains() -> void:
+	spawning_enabled = true
+	spawn_token += 1
+	var my_token := spawn_token
+
 	for schedule: TrainSchedule in trains:
+		if not spawning_enabled or my_token != spawn_token:
+			return
 		var target := get_target_station(schedule.target)
 		if not target:
 			push_error("target station not found")
 			continue
-		
 		await get_tree().create_timer(schedule.start_delay).timeout
+		if not spawning_enabled or my_token != spawn_token:
+			return
 		var train = create_train(schedule.train_type)
+		if train == null:
+			continue
 		train.target = target
 		add_child(train)
 
