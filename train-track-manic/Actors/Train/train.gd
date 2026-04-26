@@ -1,12 +1,12 @@
 class_name Train
 extends CharacterBody2D
 
-var speed = 50.0
 var running = true
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 
 @export var target: Node2D
+@export_range(50, 200) var speed: int = 50
 
 func _ready() -> void:
 	Event.start_trains.connect(_on_train_button_pressed)
