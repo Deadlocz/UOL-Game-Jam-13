@@ -34,9 +34,3 @@ func activate_certain_tiles(tiles:Array) -> void:
 		var target = grid.get_child(tile_to_activate)
 		target.add_child(tile_instance)
 		childs.append(map)
-		
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

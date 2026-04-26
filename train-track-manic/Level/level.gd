@@ -5,6 +5,8 @@ extends Node2D
 ## Rail tiles are put here
 @export var rails_node: Node2D
 
+@export_file(".tscn") var scene_after_win: String
+
 
 var object: TrackTile = null
 var targetCell: GridCell = null
@@ -12,6 +14,10 @@ var objectCells: Array[GridCell] = []
 var isValid := false
 
 var placement_disabled:bool = false
+
+var slow_trains: int
+var normal_trains: int
+var fast_trains: int
 
 
 func _ready() -> void:
@@ -21,14 +27,50 @@ func _ready() -> void:
 	
 	Event.start_trains.connect(_allow_to_place)
 	Event.stop_trains.connect(_stop_place)
+	Event.train_reached_station.connect(on_train_reached_station)
 	
 	await get_tree().process_frame
 	fill_start_cells()
+	
+	count_trains()
 	
 	_reset_highlight()
 	
 	Bgm.sound_main()
 
+
+func on_train_reached_station(train_type: Enum.TrainType) -> void:
+	print(train_type, " reached station")
+	match train_type:
+		Enum.TrainType.SLOW:
+			slow_trains -= 1
+		Enum.TrainType.NORMAL:
+			normal_trains -= 1
+		Enum.TrainType.FAST:
+			fast_trains -= 1
+	
+	if slow_trains <= 0 and normal_trains <= 0 and fast_trains <= 0:
+		print_debug("Level won")
+		if not scene_after_win:
+			push_error("No level after win set")
+			return
+		get_tree().change_scene_to_file(scene_after_win)
+
+
+func count_trains() -> void:
+	## count trains currently set in the level as a target
+	var stations = get_tree().get_nodes_in_group("Station")
+	for station: Station in stations:
+		for schedule: TrainSchedule in station.trains:
+			match schedule.train_type:
+				Enum.TrainType.SLOW:
+					slow_trains += 1
+				Enum.TrainType.NORMAL:
+					normal_trains += 1
+				Enum.TrainType.FAST:
+					fast_trains += 1
+	printt("trains countet", slow_trains, normal_trains, fast_trains)
+	
 
 func fill_start_cells():
 	var cells = grid.get_children()
@@ -131,6 +173,7 @@ func _allow_to_place():
 
 func _stop_place():
 	placement_disabled = false
+	count_trains()
 
 func remove(tile:TrackTile) -> void:
 	if not targetCell:

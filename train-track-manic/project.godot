@@ -34,6 +34,10 @@ window/stretch/mode="viewport"
 Station="Name of stations used for targeting"
 Holder=""
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [input]
 
 click={
