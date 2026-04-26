@@ -43,6 +43,7 @@ cellWidth = 32
 cellHeight = 32
 
 [node name="Holder" parent="." unique_id=91845701 instance=ExtResource("6_nk1il")]
+unique_name_in_owner = true
 position = Vector2(748, 7)
 scale = Vector2(2, 2)
 

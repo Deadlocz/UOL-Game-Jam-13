@@ -6,6 +6,8 @@ var tile_type: int
 @export var level: Node2D
 @export var is_placed2: bool = false
 
+@onready var holder = get_node("../Holder")
+
 const SOURCE_ID := 0
 
 func set_tile(type: int) -> void:
@@ -55,9 +57,12 @@ func _on_desel_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 	and event.is_pressed() and not is_placed2:
 		#TODO add Tile to selectable tiles
 		printt("desel")
-		for tiles:ColorRect in $Holder/ColorRect/GridContainer.get_children(true):
-			var tile:SelectTile = tiles.get_node("SelectTile")
-			if tile.tile_type == self.tile_type:
-				tile.times + 1;
+		for tile in holder.childs:
+			if tile["key"] == tile_type:
+				var t: SelectTile = tile["value"]
+				if t.is_placed:
+					t.is_placed = false
+				t.times += 1
+				t.set_tile(tile_type)
 		Event.remove_tile.emit(self)
 		pass
