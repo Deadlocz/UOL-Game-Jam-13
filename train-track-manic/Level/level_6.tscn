@@ -27,6 +27,7 @@ script = ExtResource("1_4p6fn")
 grid = NodePath("Rails/Grid")
 disabled_grid_indices = Array[int]([3, 4, 15, 16, 20])
 rails_node = NodePath("Rails")
+scene_after_win = "uid://b3j3pe0qrrjb"
 
 [node name="UI" type="Node" parent="." unique_id=61453902]
 

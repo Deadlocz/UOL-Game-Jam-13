@@ -19,6 +19,7 @@ metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
 script = ExtResource("1_ytmfw")
 grid = NodePath("Rails/Grid")
 rails_node = NodePath("Rails")
+scene_after_win = "uid://b3j3pe0qrrjb"
 
 [node name="UI" type="Node" parent="." unique_id=61453902]
 

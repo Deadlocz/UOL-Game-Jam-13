@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://csgyhb0yjwxsa" path="res://Menu/buttonHover.png" id="11_cgse8"]
 [ext_resource type="Script" uid="uid://ckw0hvfb2b3t3" path="res://Actors/Station/train_schedule.gd" id="11_fduiw"]
 [ext_resource type="TileSet" uid="uid://ufe87yxgn113" path="res://Menu/text.tres" id="11_ws7s4"]
+[ext_resource type="Texture2D" uid="uid://g6i3xy4c4ws5" path="res://Level/buttonDisabled.png" id="12_cgse8"]
 
 [sub_resource type="Gradient" id="Gradient_rw3mj"]
 offsets = PackedFloat32Array(0, 0.47289157, 0.9879518)
@@ -169,11 +170,14 @@ text = "Start"
 
 [node name="SettingsButton" type="TextureButton" parent="ButtonContainer" unique_id=1734599149]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("9_ws7s4")
 texture_pressed = ExtResource("10_fduiw")
 texture_hover = ExtResource("11_cgse8")
+texture_disabled = ExtResource("12_cgse8")
 
 [node name="Label" type="Label" parent="ButtonContainer/SettingsButton" unique_id=1902478947]
+modulate = Color(1, 1, 1, 0.64705884)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

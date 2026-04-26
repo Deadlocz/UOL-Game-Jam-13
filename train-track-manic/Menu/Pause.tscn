@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://cptvh2xe6f4qu"]
 
 [ext_resource type="PackedScene" uid="uid://tmoj74mqbmef" path="res://Menu/MainManuButton.tscn" id="1_hsvih"]
-[ext_resource type="Script" uid="uid://bgnan63if6r2p" path="res://Menu/pause.gd" id="1_witjg"]
+[ext_resource type="Script" path="res://Menu/pause.gd" id="1_witjg"]
 [ext_resource type="Texture2D" uid="uid://1rjf6tft3ntq" path="res://Menu/buttonOut.png" id="2_witjg"]
 [ext_resource type="Texture2D" uid="uid://mcgrpe866k8s" path="res://Menu/buttonIn.png" id="3_14oea"]
 [ext_resource type="Texture2D" uid="uid://csgyhb0yjwxsa" path="res://Menu/buttonHover.png" id="4_ilgcy"]
 [ext_resource type="Texture2D" uid="uid://bljeayirpcc2r" path="res://Bett.png" id="5_6ietn"]
+[ext_resource type="Texture2D" uid="uid://g6i3xy4c4ws5" path="res://Level/buttonDisabled.png" id="6_14oea"]
 [ext_resource type="TileSet" uid="uid://ufe87yxgn113" path="res://Menu/text.tres" id="6_kmb7e"]
 
 [node name="Pause" type="CanvasLayer" unique_id=1526877212]
@@ -37,11 +38,14 @@ offset_top = 176.00002
 offset_right = 296.0
 offset_bottom = 208.00002
 scale = Vector2(2.735, 2.735)
+disabled = true
 texture_normal = ExtResource("2_witjg")
 texture_pressed = ExtResource("3_14oea")
 texture_hover = ExtResource("4_ilgcy")
+texture_disabled = ExtResource("6_14oea")
 
 [node name="Label" type="Label" parent="Control/SettingsButton" unique_id=691309890]
+modulate = Color(1, 1, 1, 0.3529412)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
