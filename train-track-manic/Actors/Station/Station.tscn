@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4wimxhiuvepe" path="res://Actors/Station/station.gd" id="1_i7yr1"]
 [ext_resource type="Texture2D" uid="uid://cevxnvakewmme" path="res://Level/test.png" id="1_v4yli"]
-[ext_resource type="Texture2D" uid="uid://cnqi13k58cipx" path="res://Actors/Train/BahnhofRed.png" id="3_tin2x"]
+[ext_resource type="Texture2D" uid="uid://dk4uucw4h5k6y" path="res://Actors/Station/BahnhofRed.png" id="3_tin2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7yr1"]
 size = Vector2(32, 32)

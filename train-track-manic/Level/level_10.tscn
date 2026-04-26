@@ -10,21 +10,19 @@
 [ext_resource type="PackedScene" uid="uid://e0bhy6f25e6y" path="res://Actors/Station/Station.tscn" id="8_f6t73"]
 [ext_resource type="Script" uid="uid://ckw0hvfb2b3t3" path="res://Actors/Station/train_schedule.gd" id="9_2ve3m"]
 
-[sub_resource type="Resource" id="Resource_3xq48"]
-script = ExtResource("9_2ve3m")
-train_type = 0
-metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
-
 [sub_resource type="Resource" id="Resource_7wlfu"]
 script = ExtResource("9_2ve3m")
-train_type = 0
 target = "C"
 metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
 
 [sub_resource type="Resource" id="Resource_67ckq"]
 script = ExtResource("9_2ve3m")
-train_type = 0
 target = "D"
+metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
+
+[sub_resource type="Resource" id="Resource_3xq48"]
+script = ExtResource("9_2ve3m")
+train_type = 0
 metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
 
 [node name="Level10" type="Node2D" unique_id=1004307011 node_paths=PackedStringArray("grid", "rails_node")]
@@ -87,6 +85,7 @@ position = Vector2(112, 176)
 [node name="StationB" parent="Stations" unique_id=1708751712 instance=ExtResource("8_f6t73")]
 position = Vector2(272, 240)
 label = "B"
+trains = Array[ExtResource("9_2ve3m")]([SubResource("Resource_7wlfu"), SubResource("Resource_67ckq")])
 
 [node name="StationC" parent="Stations" unique_id=1230912682 instance=ExtResource("8_f6t73")]
 position = Vector2(336, 208)
@@ -96,6 +95,5 @@ trains = Array[ExtResource("9_2ve3m")]([SubResource("Resource_3xq48")])
 [node name="StationD" parent="Stations" unique_id=596802823 instance=ExtResource("8_f6t73")]
 position = Vector2(304, 112)
 label = "D"
-trains = Array[ExtResource("9_2ve3m")]([SubResource("Resource_7wlfu"), SubResource("Resource_67ckq")])
 
 [connection signal="gui_input" from="Rails/Grid" to="." method="_on_grid_gui_input"]
