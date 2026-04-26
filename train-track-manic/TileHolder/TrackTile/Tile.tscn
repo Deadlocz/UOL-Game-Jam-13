@@ -19,4 +19,11 @@ tile_set = ExtResource("2_2xkra")
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_3da05")
 
+[node name="desel" type="Area2D" parent="." unique_id=1248770490]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="desel" unique_id=1320658136]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_3da05")
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="desel" to="." method="_on_desel_input_event"]
