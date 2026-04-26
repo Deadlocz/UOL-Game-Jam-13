@@ -33,7 +33,7 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_w2fji")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2014716535]
-path_desired_distance = 16.0
+path_desired_distance = 8.0
 target_desired_distance = 0.1
 path_postprocessing = 1
 simplify_path = true
