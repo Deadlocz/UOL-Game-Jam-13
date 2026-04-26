@@ -3,10 +3,17 @@
 [ext_resource type="Script" uid="uid://4wimxhiuvepe" path="res://Actors/Station/station.gd" id="1_i7yr1"]
 [ext_resource type="Texture2D" uid="uid://cevxnvakewmme" path="res://Level/test.png" id="1_v4yli"]
 
-[node name="Station" type="Node2D" unique_id=647371737 node_paths=PackedStringArray("trains")]
+[node name="Station" type="Node2D" unique_id=647371737 groups=["Station"]]
 script = ExtResource("1_i7yr1")
-trains = [null, null, null]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=7544768]
 modulate = Color(1.3957917e-06, 0.41966248, 0.31213915, 1)
 texture = ExtResource("1_v4yli")
+
+[node name="Label" type="Label" parent="." unique_id=539563399]
+unique_name_in_owner = true
+offset_left = -5.0
+offset_top = -13.0
+offset_right = 35.0
+offset_bottom = 10.0
+text = "A"

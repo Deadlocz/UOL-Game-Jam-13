@@ -1,10 +1,8 @@
-[gd_scene format=3 uid="uid://bqnhi1h2jpre"]
+[gd_scene format=3 uid="uid://d0jy4cr7dhqds"]
 
-[ext_resource type="Script" uid="uid://bj71reg85o4d7" path="res://Actors/Train/train.gd" id="1_hod3q"]
-[ext_resource type="Texture2D" uid="uid://hguu64uxqv2j" path="res://Actors/Train/V100_front.png" id="2_8yiqq"]
-[ext_resource type="Texture2D" uid="uid://br48ruw5jxlx5" path="res://Actors/Train/V100_side.png" id="3_ulkum"]
-[ext_resource type="Texture2D" uid="uid://dgm368mfbgyf4" path="res://Actors/Train/SchweizerKorkodil_front.png" id="4_n6k0t"]
-[ext_resource type="Texture2D" uid="uid://cuhaq5qcdb50o" path="res://Actors/Train/SchweizerKorkodil_side.png" id="5_yq8f3"]
+[ext_resource type="Script" uid="uid://bj71reg85o4d7" path="res://Actors/Train/train.gd" id="1_kifvw"]
+[ext_resource type="Texture2D" uid="uid://w4025pc7v33t" path="res://Actors/Train/yellow_front.png" id="2_smeso"]
+[ext_resource type="Texture2D" uid="uid://yp3b5ak1lseg" path="res://Actors/Train/yellow_side.png" id="3_7ydel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q62qj"]
 
@@ -12,16 +10,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8yiqq")
+"texture": ExtResource("2_smeso")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ulkum")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_n6k0t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_yq8f3")
+"texture": ExtResource("3_7ydel")
 }],
 "loop": true,
 "name": &"default",
@@ -29,7 +21,7 @@ animations = [{
 }]
 
 [node name="Train" type="CharacterBody2D" unique_id=1029754237]
-script = ExtResource("1_hod3q")
+script = ExtResource("1_kifvw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=418362020]
 shape = SubResource("RectangleShape2D_q62qj")
