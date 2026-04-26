@@ -5,8 +5,8 @@ extends Node2D
 var childs: Array = []
 
 #Muss aus obv gründen gleich lang sein
-var MISSION_ONE:Array = [0, 2, 5, 8, 10]
-var MISSION_ONE_TIMES:Array = [0, 3, 1, 8, 9]
+@export var MISSION_ONE:Array = [0, 2, 5, 8, 10]
+@export var MISSION_ONE_TIMES:Array = [0, 3, 1, 8, 9]
 
 
 
