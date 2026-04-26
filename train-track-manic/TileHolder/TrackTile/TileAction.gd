@@ -13,7 +13,7 @@ var placement_disabled = false
 var holder: Node2D
 
 const SOURCE_ID := 0
-
+const CROSS_TILE := preload("res://TileHolder/TrackTile/CrossTile.tscn")
 
 func _enable_placement():
 	placement_disabled = false
@@ -31,6 +31,9 @@ func set_tile(type: int) -> void:
 	var y := type / 4
 	var x := type % 4
 	%TileMapLayer.set_cell(Vector2i(0, 0), SOURCE_ID, Vector2i(x, y), 0)
+	if tile_type == 6:
+		var cross_tile = CROSS_TILE.instantiate()
+		%TileMapLayer.add_child(cross_tile)
 
 func get_global_rect() -> Rect2:
 	return Rect2(
