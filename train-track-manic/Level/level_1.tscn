@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://k0o5jkpt3rxt"]
+[gd_scene format=4 uid="uid://bys8suwt45wdv"]
 
 [ext_resource type="Script" uid="uid://dl4kh0mityowt" path="res://Level/level.gd" id="1_8uf8f"]
 [ext_resource type="PackedScene" uid="uid://d5ryhf3lp2yi" path="res://TileHolder/TrackHolder.tscn" id="2_mkoc1"]
@@ -32,17 +32,17 @@ metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
 
 [node name="Level1" type="Node2D" unique_id=1004307011 node_paths=PackedStringArray("grid", "rails_node")]
 script = ExtResource("1_8uf8f")
-scene_after_win = "uid://b3j3pe0qrrjb"
 grid = NodePath("Rails/Grid")
 rails_node = NodePath("Rails")
+scene_after_win = "uid://b3j3pe0qrrjb"
 
 [node name="UI" type="Node" parent="." unique_id=61453902]
 
 [node name="Holder" parent="UI" unique_id=91845701 instance=ExtResource("2_mkoc1")]
 unique_name_in_owner = true
 position = Vector2(480, 32)
-MISSION_ONE = [0, 2, 5, 8, 10]
-MISSION_ONE_TIMES = [0, 3, 1, 8, 9]
+MISSION_ONE = [14]
+MISSION_ONE_TIMES = [0]
 
 [node name="TrainButton" parent="UI" unique_id=1538748435 instance=ExtResource("3_8675k")]
 offset_left = 544.0
