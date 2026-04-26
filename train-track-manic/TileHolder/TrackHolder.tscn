@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b88uww1icsg" path="res://TileHolder/track_holder.gd" id="1_ul165"]
 
-[node name="Holder" type="Node2D" unique_id=91845701]
+[node name="Holder" type="Node2D" unique_id=91845701 groups=["Holder"]]
 script = ExtResource("1_ul165")
 tile_path = "uid://toyrxvks063b"
 

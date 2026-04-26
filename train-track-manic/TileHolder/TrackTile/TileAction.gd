@@ -6,9 +6,12 @@ var tile_type: int
 @export var level: Node2D
 @export var is_placed2: bool = false
 
-@onready var holder = get_node("../Holder")
+var holder: Node2D
 
 const SOURCE_ID := 0
+
+func _ready() -> void:
+	holder = get_tree().get_first_node_in_group("Holder")
 
 func set_tile(type: int) -> void:
 	tile_type = type
