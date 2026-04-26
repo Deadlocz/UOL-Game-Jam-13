@@ -7,6 +7,7 @@ var running = true
 
 @export var target: Node2D
 @export_range(50, 200) var speed: int = 50
+@export var type: Enum.TrainType
 
 var origin_station_label: String
 
