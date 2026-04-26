@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://4wimxhiuvepe" path="res://Actors/Station/station.gd" id="1_i7yr1"]
 [ext_resource type="Texture2D" uid="uid://cevxnvakewmme" path="res://Level/test.png" id="1_v4yli"]
+[ext_resource type="Script" uid="uid://ckw0hvfb2b3t3" path="res://Actors/Station/train_schedule.gd" id="2_tin2x"]
 
-[node name="Station" type="Node2D" unique_id=647371737 node_paths=PackedStringArray("trains")]
+[sub_resource type="Resource" id="Resource_rfmgo"]
+script = ExtResource("2_tin2x")
+metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
+
+[sub_resource type="Resource" id="Resource_tin2x"]
+script = ExtResource("2_tin2x")
+metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
+
+[node name="Station" type="Node2D" unique_id=647371737 groups=["Station"]]
 script = ExtResource("1_i7yr1")
-trains = [null, null, null]
+trains = Array[ExtResource("2_tin2x")]([SubResource("Resource_rfmgo"), SubResource("Resource_tin2x")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=7544768]
 modulate = Color(1.3957917e-06, 0.41966248, 0.31213915, 1)
