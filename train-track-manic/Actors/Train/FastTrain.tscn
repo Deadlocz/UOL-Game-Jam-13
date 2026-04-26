@@ -33,10 +33,9 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_w2fji")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2014716535]
-path_desired_distance = 16.0
+path_desired_distance = 8.0
 target_desired_distance = 0.1
 path_postprocessing = 1
 simplify_path = true
-debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0.9207399, 0.0006857669, 0.9207335, 1)
