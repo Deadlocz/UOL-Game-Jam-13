@@ -25,12 +25,12 @@ func _ready() -> void:
 	await get_tree().process_frame
 	fill_start_cells()
 	
+	_reset_highlight()
+	
 	Bgm.sound_main()
 
 
 func fill_start_cells():
-	disabled_grid_indices = [0, 1 ,2, 3, 4]
-	printt(grid.get_begin())
 	var cells = grid.get_children()
 	for idx in disabled_grid_indices:
 		if idx >= 0 and idx < cells.size():
@@ -38,7 +38,7 @@ func fill_start_cells():
 			if cell:
 				cell.full = true
 				cell.disabled = true
-				cell.change_color(Color.BLACK)
+				cell.change_color(Color(0.5, 0.5, 0.5, 0.0))
 
 func _input(event):
 	if placement_disabled:
@@ -109,9 +109,9 @@ func _check_and_highlight_cells():
 func _reset_highlight():
 	for child: GridCell in grid.get_children():
 		if child.disabled:
-			child.change_color(Color.RED)
-		else:
 			child.change_color(Color(0.5, 0.5, 0.5, 0.0))
+		else:
+			child.change_color(Color(0.502, 0.502, 0.502, 0.251))
 
 func _place_placement():
 	if placement_disabled:
