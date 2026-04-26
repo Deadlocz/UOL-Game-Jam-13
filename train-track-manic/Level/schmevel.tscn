@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://cy1seo7nqbef7"]
 
 [ext_resource type="Script" uid="uid://bbgfp76omngdl" path="res://Level/schmevel.gd" id="1_hcjw8"]
-[ext_resource type="TileSet" uid="uid://chqweth4bxyll" path="res://Level/ground.tres" id="2_m0bew"]
+[ext_resource type="TileSet" path="res://Level/ground.tres" id="2_m0bew"]
 [ext_resource type="TileSet" uid="uid://dwjjjcil6r31r" path="res://Level/accessoire.tres" id="3_kx012"]
 [ext_resource type="TileSet" uid="uid://b4a2cqdy5q21w" path="res://Level/rails.tres" id="4_g0nup"]
 [ext_resource type="PackedScene" uid="uid://bo1cpe7ekrm1q" path="res://grid_map/Grid.tscn" id="5_42xew"]
 [ext_resource type="PackedScene" uid="uid://e0bhy6f25e6y" path="res://Actors/Station/Station.tscn" id="6_kx012"]
-[ext_resource type="PackedScene" uid="uid://bit1ui22aykpx" path="res://Actors/Train/FastTrain.tscn" id="7_g0nup"]
+[ext_resource type="PackedScene" uid="uid://bit1ui22aykpx" path="res://Actors/Train/Train.tscn" id="7_g0nup"]
+[ext_resource type="PackedScene" uid="uid://d5ryhf3lp2yi" path="res://TileHolder/TrackHolder.tscn" id="8_g0nup"]
 
 [node name="Level" type="Node2D" unique_id=1004307011]
 script = ExtResource("1_hcjw8")
@@ -44,5 +45,8 @@ position = Vector2(336, 129)
 [node name="Train" parent="." unique_id=1029754237 node_paths=PackedStringArray("target") instance=ExtResource("7_g0nup")]
 position = Vector2(144, 83)
 target = NodePath("../Station")
+
+[node name="Holder" parent="." unique_id=91845701 instance=ExtResource("8_g0nup")]
+position = Vector2(577, 60)
 
 [connection signal="gui_input" from="Grid" to="." method="_on_grid_gui_input"]
