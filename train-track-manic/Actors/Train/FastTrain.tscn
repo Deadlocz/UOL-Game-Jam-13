@@ -22,6 +22,7 @@ animations = [{
 
 [node name="Train" type="CharacterBody2D" unique_id=1029754237]
 script = ExtResource("1_q62qj")
+speed = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=418362020]
 shape = SubResource("RectangleShape2D_q62qj")

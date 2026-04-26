@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://4wimxhiuvepe" path="res://Actors/Station/station.gd" id="1_i7yr1"]
 [ext_resource type="Texture2D" uid="uid://cevxnvakewmme" path="res://Level/test.png" id="1_v4yli"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7yr1"]
+size = Vector2(34, 34)
+
 [node name="Station" type="Node2D" unique_id=647371737 groups=["Station"]]
 script = ExtResource("1_i7yr1")
 
@@ -17,3 +20,10 @@ offset_top = -13.0
 offset_right = 35.0
 offset_bottom = 10.0
 text = "A"
+
+[node name="TrainDetectionArea" type="Area2D" parent="." unique_id=165800267]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrainDetectionArea" unique_id=31494546]
+shape = SubResource("RectangleShape2D_i7yr1")
+
+[connection signal="body_entered" from="TrainDetectionArea" to="." method="_on_train_detection_area_body_entered"]

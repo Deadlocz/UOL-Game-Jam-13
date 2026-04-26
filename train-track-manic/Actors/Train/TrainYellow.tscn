@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d0jy4cr7dhqds"]
+[gd_scene format=3 uid="uid://cqufvx0ka57x7"]
 
 [ext_resource type="Script" uid="uid://bj71reg85o4d7" path="res://Actors/Train/train.gd" id="1_kifvw"]
 [ext_resource type="Texture2D" uid="uid://w4025pc7v33t" path="res://Actors/Train/yellow_front.png" id="2_smeso"]
@@ -22,6 +22,7 @@ animations = [{
 
 [node name="Train" type="CharacterBody2D" unique_id=1029754237]
 script = ExtResource("1_kifvw")
+speed = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=418362020]
 shape = SubResource("RectangleShape2D_q62qj")

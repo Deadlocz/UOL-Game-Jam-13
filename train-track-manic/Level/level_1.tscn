@@ -12,12 +12,13 @@
 
 [sub_resource type="Resource" id="Resource_mkoc1"]
 script = ExtResource("9_mkoc1")
+train_type = 0
 target = "B"
 metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
 
 [sub_resource type="Resource" id="Resource_8675k"]
 script = ExtResource("9_mkoc1")
-train_type = 0
+start_delay = 2.0
 target = "B"
 metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
 

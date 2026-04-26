@@ -10,6 +10,8 @@ const FAST_TRAIN_SCENE = preload("res://Actors/Train/FastTrain.tscn")
 
 ## Label is used to find this station as a target
 @export var label: String = "A":
+	get:
+		return label
 	set(value):
 		label = value
 		%Label.text = label
@@ -35,19 +37,23 @@ func on_start_trains() -> void:
 		add_child(train)
 
 func create_train(type: Enum.TrainType) -> Train:
+	var train: Train
 	match type:
 		Enum.TrainType.SLOW:
-			return SLOW_TRAIN_SCENE.instantiate()
+			train = SLOW_TRAIN_SCENE.instantiate()
 		
 		Enum.TrainType.NORMAL:
-			return NORMAL_TRAIN_SCENE.instantiate()
+			train = NORMAL_TRAIN_SCENE.instantiate()
 		
 		Enum.TrainType.FAST:
-			return FAST_TRAIN_SCENE.instantiate()
+			train = FAST_TRAIN_SCENE.instantiate()
 		
 		_:
 			push_error("Wrong train type")
 			return null
+	
+	train.origin_station_label = label
+	return train
 
 ## finds station by looking up every station in group
 func get_target_station(target_label: String) -> Station:
@@ -57,3 +63,11 @@ func get_target_station(target_label: String) -> Station:
 			return station
 	
 	return null
+
+
+func _on_train_detection_area_body_entered(body: Node2D) -> void:
+	if body is Train:
+		var train := body as Train
+		if train.origin_station_label == label:
+			return
+		body.queue_free()
