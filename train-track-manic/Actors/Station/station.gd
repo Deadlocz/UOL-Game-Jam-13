@@ -4,7 +4,7 @@ extends Node2D
 
 
 const SLOW_TRAIN_SCENE = preload("res://Actors/Train/SlowTrain.tscn")
-const NORMAL_TRAIN_SCENE = preload("res://Actors/Train/SlowTrain.tscn") #TODO: replace when normal train da
+const NORMAL_TRAIN_SCENE = preload("res://Actors/Train/TrainYellow.tscn") # Das macht sinn
 const FAST_TRAIN_SCENE = preload("res://Actors/Train/FastTrain.tscn")
 
 

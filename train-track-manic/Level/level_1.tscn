@@ -15,6 +15,19 @@ script = ExtResource("9_mkoc1")
 target = "B"
 metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
 
+[sub_resource type="Resource" id="Resource_8675k"]
+script = ExtResource("9_mkoc1")
+train_type = 0
+target = "B"
+metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
+
+[sub_resource type="Resource" id="Resource_6lwv1"]
+script = ExtResource("9_mkoc1")
+train_type = 2
+start_delay = 2.0
+target = "B"
+metadata/_custom_type_script = "uid://ckw0hvfb2b3t3"
+
 [node name="Level1" type="Node2D" unique_id=1004307011 node_paths=PackedStringArray("grid", "rails_node")]
 script = ExtResource("1_8uf8f")
 grid = NodePath("Rails/Grid")
@@ -70,7 +83,7 @@ cellHeight = 32
 
 [node name="StationA" parent="Stations" unique_id=647371737 instance=ExtResource("8_w3gjf")]
 position = Vector2(112, 112)
-trains = Array[ExtResource("9_mkoc1")]([SubResource("Resource_mkoc1")])
+trains = Array[ExtResource("9_mkoc1")]([SubResource("Resource_mkoc1"), SubResource("Resource_8675k"), SubResource("Resource_6lwv1")])
 
 [node name="StationB" parent="Stations" unique_id=1708751712 instance=ExtResource("8_w3gjf")]
 position = Vector2(304, 112)
