@@ -89,4 +89,4 @@ func _on_train_detection_area_body_entered(body: Node2D) -> void:
 		if train.origin_station_label == label:
 			return
 		Event.train_reached_station.emit(train.type)
-		body.queue_free()
+		train.queue_free()
