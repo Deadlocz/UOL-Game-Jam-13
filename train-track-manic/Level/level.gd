@@ -35,6 +35,8 @@ func _input(event):
 
 
 func create_new(object1):
+	if object:
+		return
 	var cell:GridCell = _get_target_cell(get_global_mouse_position())
 	if  cell != null:
 		cell.full = false
@@ -110,7 +112,7 @@ func remove(tile:TrackTile) -> void:
 	object.modulate.a = 0
 	targetCell.full = false
 	targetCell = null
-	object = null
+	object = null	
 	isValid = true
 	objectCells.clear()
 	_reset_highlight()
