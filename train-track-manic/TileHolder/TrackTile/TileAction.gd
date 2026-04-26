@@ -1,5 +1,5 @@
 class_name TrackTile
-extends Sprite2D
+extends Node2D
 
 var tile_type: int
 @export var rect: Rect2

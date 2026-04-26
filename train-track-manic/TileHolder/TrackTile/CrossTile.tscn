@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daycfty4tqabu" path="res://TileHolder/TrackTile/TileAction.gd" id="1_oren2"]
 
-[node name="TrackTile" type="Sprite2D" unique_id=391364208]
+[node name="TrackTile" type="Node2D" unique_id=199868156]
 script = ExtResource("1_oren2")
 
 [node name="LinkLeftRight" type="NavigationLink2D" parent="." unique_id=540423086]
