@@ -66,6 +66,7 @@ func on_train_reached_station(train_type: Enum.TrainType) -> void:
 		if not scene_after_win:
 			push_error("No level after win set")
 			return
+		
 		get_tree().change_scene_to_file(scene_after_win)
 
 
