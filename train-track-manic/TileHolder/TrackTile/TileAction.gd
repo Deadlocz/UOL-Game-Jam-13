@@ -27,7 +27,7 @@ func set_on_place():
 	modulate.a = 1
 	set_as_top_level(false)
 	
-	await get_tree().create_timer(0.0001).timeout
+	await get_tree().create_timer(0.1).timeout
 	
 	if has_node("Area2D"):
 		var area:Area2D = get_node("Area2D")
